@@ -1,5 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import SectionContainer from "../styled-components/SectionContainer";
+import SectionTitle from "../styled-components/SectionTitle";
+import SectionDescription from "../styled-components/SectionDescription";
 
 const Accordion = () => {
   return (
@@ -19,21 +21,5 @@ const Accordion = () => {
     </SectionContainer>
   );
 };
-
-const SectionContainer = styled.div`
-  width: calc(100vh - 240px);
-  margin-left: 240px;
-  padding: 57.2px 0px 57.2px 57.2px;
-`;
-
-const SectionTitle = styled.p`
-  font-size: 40px;
-  margin-top: 0px;
-  margin-bottom: 33.2px;
-`;
-
-const SectionDescription = styled.p`
-font-size: 13px;
-margin: 0px;`
 
 export default Accordion;
