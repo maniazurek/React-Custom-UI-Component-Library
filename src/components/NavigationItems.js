@@ -23,8 +23,8 @@ const Item = styled.h3`
   font-size: 15px;
   margin: 0px;
   padding: 10px;
-  &:hover {
-    border: 1px solid #fff;
+  &:hover,
+  &:focus {
     border-radius: 10px;
     color: #8fb593;
     background-color: #fff;

@@ -6,7 +6,7 @@ const Welcome = () => {
   const navigate = useNavigate();
 
   const onStart = () => {
-    navigate("/main");
+    navigate("/accordion");
   };
 
   return (
