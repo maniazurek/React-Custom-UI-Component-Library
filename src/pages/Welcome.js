@@ -11,7 +11,7 @@ const Welcome = () => {
 
   return (
     <WelcomeContainer>
-      <WelcomeHeader>Work smarter and create faster with</WelcomeHeader>
+      <WelcomeHeader>Create faster and work smarter with</WelcomeHeader>
       <MainHeader>UI Mania</MainHeader>
       <WelcomeButton onClick={onStart}>Get started!</WelcomeButton>
     </WelcomeContainer>

@@ -8,11 +8,11 @@ const NavigationItems = () => {
       <NavLink to="/accordion">
         <NavigationItem>Accordion</NavigationItem>
       </NavLink>
-      <NavLink to="/2">
-        <NavigationItem>Second component</NavigationItem>
+      <NavLink to="/taginput">
+        <NavigationItem>Tag Input</NavigationItem>
       </NavLink>
-      <NavLink to="/3">
-        <NavigationItem>Third component</NavigationItem>
+      <NavLink to="/selectbox">
+        <NavigationItem>Select Box</NavigationItem>
       </NavLink>
     </>
   );
