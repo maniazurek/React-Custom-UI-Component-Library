@@ -15,10 +15,14 @@ const AccordionUI = ({ accordionData }) => {
     <div>
       {accordionData.map((accordion, event) => (
         <div>
-          <AccordionTitle onClick={() => onAccordionToggle(event)}>
-            <div>{accordion.title}</div>
-            <span>{isOpen === event ? "-" : "+"}</span>
-          </AccordionTitle>
+          {accordion.disabled === "false" ? (
+            <AccordionTitle onClick={() => onAccordionToggle(event)}>
+              <div>{accordion.title}</div>
+              <span>{isOpen === event ? "-" : "+"}</span>
+            </AccordionTitle>
+          ) : (
+            <AccordionTitleDisabled>{accordion.title}</AccordionTitleDisabled>
+          )}
           {isOpen === event && (
             <AccordionDescriptionOpen>
               {accordion.description}
@@ -41,6 +45,20 @@ const AccordionTitle = styled.div`
   cursor: pointer;
   margin-top: 7px;
   margin-bottom: 7px;
+`;
+
+const AccordionTitleDisabled = styled.div`
+  font-size: 20px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 8px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  background-color: #d8d8d8;
 `;
 
 const AccordionDescriptionOpen = styled.div`
