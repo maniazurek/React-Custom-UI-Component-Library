@@ -1,16 +1,20 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import Accordion from "../components/Accordion";
-import Navigation from "../components/Navigation";
-import TagInput from "../components/TagInput";
-import SelectBox from "../components/SelectBox";
+import { AnimatePresence } from "framer-motion";
+import Accordion from "../components-UI/Accordion";
+import Button from "../components-UI/Button";
+import Navigation from "../components-website/Navigation";
+import TagInput from "../components-UI/TagInput";
+import SelectBox from "../components-UI/SelectBox";
 
 const Main = ({ optionsToSelect }) => {
+  const location = useLocation();
   return (
-    <>
-      <Routes>
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
         <Route path="/accordion" element={<Accordion />} />
+        <Route path="/button" element={<Button />} />
         <Route path="/taginput" element={<TagInput />} />
         <Route
           path="/selectbox"
@@ -24,7 +28,7 @@ const Main = ({ optionsToSelect }) => {
       </Routes>
       <Outlet />
       <Navigation />
-    </>
+    </AnimatePresence>
   );
 };
 

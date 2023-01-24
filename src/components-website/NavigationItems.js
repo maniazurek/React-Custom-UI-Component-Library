@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import NavigationItem from "../styled-components/NavigationItem";
+import NavigationItem from "../styled-components-website/NavigationItem";
 
 const NavigationItems = () => {
   return (
@@ -8,11 +8,14 @@ const NavigationItems = () => {
       <NavLink to="/accordion">
         <NavigationItem>Accordion</NavigationItem>
       </NavLink>
-      <NavLink to="/taginput">
-        <NavigationItem>Tag Input</NavigationItem>
+      <NavLink to="/button">
+        <NavigationItem>Button</NavigationItem>
       </NavLink>
       <NavLink to="/selectbox">
         <NavigationItem>Select Box</NavigationItem>
+      </NavLink>
+      <NavLink to="/taginput">
+        <NavigationItem>Tag Input</NavigationItem>
       </NavLink>
     </>
   );
