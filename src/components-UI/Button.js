@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SectionContainer from "../styled-components-website/SectionContainer";
 import SectionTitle from "../styled-components-website/SectionTitle";
 import SectionDescription from "../styled-components-website/SectionDescription";
+import ButtonUI from "./ButtonUI";
 
 const Button = () => {
   return (
@@ -24,6 +25,7 @@ const Button = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </SectionDescription>
+        <ButtonUI/>
       </SectionContainer>
     </motion.div>
   );

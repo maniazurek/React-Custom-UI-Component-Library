@@ -18,7 +18,13 @@ const AccordionUI = ({ accordionData }) => {
           {accordion.disabled === "false" ? (
             <AccordionTitle onClick={() => onAccordionToggle(event)}>
               <div>{accordion.title}</div>
-              <span>{isOpen === event ? "-" : "+"}</span>
+              <span
+                className={
+                  isOpen === event
+                    ? "fa-solid fa-chevron-up fa-2xs"
+                    : "fa-solid fa-chevron-down fa-2xs"
+                }
+              ></span>
             </AccordionTitle>
           ) : (
             <AccordionTitleDisabled>{accordion.title}</AccordionTitleDisabled>
@@ -36,20 +42,23 @@ const AccordionUI = ({ accordionData }) => {
 
 const AccordionTitle = styled.div`
   font-size: 20px;
-  border: 1px solid #000;
+  border: 1px solid #8fb593;
   border-radius: 4px;
   padding: 8px;
   width: 500px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   margin-top: 7px;
   margin-bottom: 7px;
+  background-color: #8fb593;
+  color: #fff;
 `;
 
 const AccordionTitleDisabled = styled.div`
   font-size: 20px;
-  border: 1px solid #000;
+  border: 1px solid #d8d8d8;
   border-radius: 4px;
   padding: 8px;
   width: 500px;
@@ -59,11 +68,12 @@ const AccordionTitleDisabled = styled.div`
   margin-top: 7px;
   margin-bottom: 7px;
   background-color: #d8d8d8;
+  color: #fff;
 `;
 
 const AccordionDescriptionOpen = styled.div`
   font-size: 12px;
-  border: 1px solid #000;
+  border: 1px solid #8fb593;
   border-radius: 4px;
   padding: 8px;
   width: 500px;
