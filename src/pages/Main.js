@@ -9,14 +9,20 @@ import TagInput from "../components-UI/TagInput";
 import SelectBox from "../components-UI/SelectBox";
 import SwitchButton from "../components-UI/SwitchButton";
 
-const Main = ({ optionsToSelect, accordionData }) => {
+const Main = ({ optionsToSelect, accordionData, accordionTitle, disabled }) => {
   const location = useLocation();
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         <Route
           path="/accordion"
-          element={<Accordion accordionData={accordionData} />}
+          element={
+            <Accordion
+              accordionData={accordionData}
+              accordionTitle={accordionTitle}
+              disabled={disabled}
+            />
+          }
         />
         <Route path="/button" element={<Button />} />
         <Route path="/taginput" element={<TagInput />} />

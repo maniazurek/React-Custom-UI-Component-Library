@@ -15,7 +15,7 @@ const AccordionUI = ({ accordionData }) => {
     <div>
       {accordionData.map((accordion, event) => (
         <div>
-          {accordion.disabled === "false" ? (
+          {!accordion.disabled ? (
             <AccordionTitle onClick={() => onAccordionToggle(event)}>
               <div>{accordion.title}</div>
               <span

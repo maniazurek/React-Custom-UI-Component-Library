@@ -5,7 +5,7 @@ import SectionTitle from "../styled-components-website/SectionTitle";
 import SectionDescription from "../styled-components-website/SectionDescription";
 import AccordionUI from "./AccordionUI";
 
-const Accordion = ({ accordionData }) => {
+const Accordion = ({ accordionData, accordionTitle, disabled }) => {
   return (
     <motion.div>
       <SectionContainer
@@ -13,7 +13,7 @@ const Accordion = ({ accordionData }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <SectionTitle>Accordion</SectionTitle>
+        <SectionTitle>{accordionTitle}</SectionTitle>
         <SectionDescription>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -25,7 +25,10 @@ const Accordion = ({ accordionData }) => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </SectionDescription>
-        <AccordionUI accordionData={accordionData} />
+        <AccordionUI
+          accordionData={accordionData}
+          disabled={disabled}
+        />
       </SectionContainer>
     </motion.div>
   );

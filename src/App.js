@@ -15,8 +15,10 @@ const App = () => {
           element={
             <Main
               accordionData={accordionData}
+              accordionTitle="Accordion"
               optionsToSelect={optionsToSelect}
               placeholder="Choose your character"
+              disabled={accordionData.disabled}
             />
           }
         />
