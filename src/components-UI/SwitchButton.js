@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import SectionContainer from "../styled-components-website/SectionContainer";
 import SectionTitle from "../styled-components-website/SectionTitle";
 import SectionDescription from "../styled-components-website/SectionDescription";
