@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import accordionData from "../utils/accordionData";
 
-const AccordionUI = ({ accordionData }) => {
+const AccordionUI = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onAccordionToggle = (event) => {
