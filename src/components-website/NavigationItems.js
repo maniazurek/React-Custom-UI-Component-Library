@@ -11,11 +11,12 @@ const NavigationItems = () => {
       <NavLink to="/button">
         <NavigationItem>Button</NavigationItem>
       </NavLink>
-
+      <NavLink to="/selectbox">
+        <NavigationItem>Select Box</NavigationItem>
+      </NavLink>
       <NavLink to="/switchbutton">
         <NavigationItem>Switch Button</NavigationItem>
       </NavLink>
-
     </>
   );
 };

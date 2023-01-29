@@ -59,7 +59,7 @@ const AccordionTitle = styled.div`
   background-color: ${({ disabled }) =>
     disabled === "false" ? "#8fb593" : "#d8d8d8"};
   border: ${({ disabled }) =>
-    disabled === "false" ? "1px solid #8fb593" : "1px solid d8d8d8"};
+    disabled === "false" ? "1px solid #8fb593" : "1px solid #d8d8d8"};
 `;
 
 const AccordionDescriptionOpen = styled.div`
