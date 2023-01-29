@@ -17,6 +17,12 @@ const NavigationItems = () => {
       <NavLink to="/switchbutton">
         <NavigationItem>Switch Button</NavigationItem>
       </NavLink>
+      <NavLink to="/tagselectbox">
+        <NavigationItem>Tag Select Box</NavigationItem>
+      </NavLink>
+      <NavLink to="/transferlist">
+        <NavigationItem>Transfer List</NavigationItem>
+      </NavLink>
     </>
   );
 };

@@ -7,6 +7,8 @@ import Button from "../components-UI/Button";
 import Navigation from "../components-website/Navigation";
 import SwitchButton from "../components-UI/SwitchButton";
 import SelectBox from "../components-UI/SelectBox";
+import TagSelectBox from "../components-UI/TagSelectBox";
+import TransferList from "../components-UI/TransferList";
 
 const Main = () => {
   const location = useLocation();
@@ -17,6 +19,8 @@ const Main = () => {
         <Route path="/button" element={<Button />} />
         <Route path="/selectbox" element={<SelectBox />} />
         <Route path="/switchbutton" element={<SwitchButton />} />
+        <Route path="/tagselectbox" element={<TagSelectBox />} />
+        <Route path="/transferlist" element={<TransferList />} />
       </Routes>
       <Outlet />
       <Navigation />
