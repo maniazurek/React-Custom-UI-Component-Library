@@ -17,7 +17,10 @@ const AccordionUI = () => {
       {accordionData.map((accordion, event) => (
         <div>
           {!accordion.disabled ? (
-            <AccordionTitle onClick={() => onAccordionToggle(event)}>
+            <AccordionTitle
+              disabled="false"
+              onClick={() => onAccordionToggle(event)}
+            >
               <div>{accordion.title}</div>
               <span
                 className={
@@ -28,7 +31,7 @@ const AccordionUI = () => {
               ></span>
             </AccordionTitle>
           ) : (
-            <AccordionTitleDisabled>{accordion.title}</AccordionTitleDisabled>
+            <AccordionTitle disabled="true">{accordion.title}</AccordionTitle>
           )}
           {isOpen === event && (
             <AccordionDescriptionOpen>
@@ -43,7 +46,6 @@ const AccordionUI = () => {
 
 const AccordionTitle = styled.div`
   font-size: 20px;
-  border: 1px solid #8fb593;
   border-radius: 4px;
   padding: 8px;
   width: 500px;
@@ -53,23 +55,11 @@ const AccordionTitle = styled.div`
   cursor: pointer;
   margin-top: 7px;
   margin-bottom: 7px;
-  background-color: #8fb593;
   color: #fff;
-`;
-
-const AccordionTitleDisabled = styled.div`
-  font-size: 20px;
-  border: 1px solid #d8d8d8;
-  border-radius: 4px;
-  padding: 8px;
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  background-color: #d8d8d8;
-  color: #fff;
+  background-color: ${({ disabled }) =>
+    disabled === "false" ? "#8fb593" : "#d8d8d8"};
+  border: ${({ disabled }) =>
+    disabled === "false" ? "1px solid #8fb593" : "1px solid d8d8d8"};
 `;
 
 const AccordionDescriptionOpen = styled.div`
