@@ -1,11 +1,11 @@
 import React from "react";
 
-import transferListData from "../utils/randomData";
+import randomData from "../utils/randomData";
 
 const TransferListUI = () => {
   return (
     <>
-      {transferListData.map((data) => (
+      {randomData.map((data) => (
         <div>{data.name}</div>
       ))}
     </>
