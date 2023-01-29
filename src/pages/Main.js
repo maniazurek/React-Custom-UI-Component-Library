@@ -9,6 +9,7 @@ import SwitchButton from "../components-UI/SwitchButton";
 import SelectBox from "../components-UI/SelectBox";
 import TagSelectBox from "../components-UI/TagSelectBox";
 import TransferList from "../components-UI/TransferList";
+import Chceckbox from "../components-UI/Checkbox";
 
 const Main = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const Main = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/button" element={<Button />} />
+        <Route path="/checkbox" element={<Chceckbox />} />
         <Route path="/selectbox" element={<SelectBox />} />
         <Route path="/switchbutton" element={<SwitchButton />} />
         <Route path="/tagselectbox" element={<TagSelectBox />} />

@@ -11,6 +11,9 @@ const NavigationItems = () => {
       <NavLink to="/button">
         <NavigationItem>Button</NavigationItem>
       </NavLink>
+      <NavLink to="/checkbox">
+        <NavigationItem>Checkbox</NavigationItem>
+      </NavLink>
       <NavLink to="/selectbox">
         <NavigationItem>Select Box</NavigationItem>
       </NavLink>

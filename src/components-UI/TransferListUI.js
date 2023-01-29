@@ -1,6 +1,6 @@
 import React from "react";
 
-import transferListData from "../utils/transferListData";
+import transferListData from "../utils/randomData";
 
 const TransferListUI = () => {
   return (
