@@ -4,6 +4,7 @@ import accordionData from "../utils/accordionData";
 
 const AccordionUI = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState(accordionData);
 
   const onAccordionToggle = (event) => {
     if (isOpen === event) {
@@ -14,7 +15,7 @@ const AccordionUI = () => {
 
   return (
     <div>
-      {accordionData.map((accordion, event) => (
+      {data.map((accordion, event) => (
         <div>
           {!accordion.disabled ? (
             <AccordionTitle
