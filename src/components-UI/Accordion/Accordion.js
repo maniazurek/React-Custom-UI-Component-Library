@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SectionContainer from "../styled-components-website/SectionContainer";
-import SectionTitle from "../styled-components-website/SectionTitle";
-import SectionDescription from "../styled-components-website/SectionDescription";
-import ButtonUI from "./ButtonUI";
+import SectionContainer from "../../styled-components-website/SectionContainer";
+import SectionTitle from "../../styled-components-website/SectionTitle";
+import SectionDescription from "../../styled-components-website/SectionDescription";
+import AccordionUI from "./AccordionUI";
 
-const Button = () => {
+const Accordion = ({ show }) => {
   return (
     <motion.div>
       <SectionContainer
@@ -13,7 +13,7 @@ const Button = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <SectionTitle>Button</SectionTitle>
+        <SectionTitle>Accordion</SectionTitle>
         <SectionDescription>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -25,10 +25,10 @@ const Button = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </SectionDescription>
-        <ButtonUI/>
+        <AccordionUI show={show} />
       </SectionContainer>
     </motion.div>
   );
 };
 
-export default Button;
+export default Accordion;

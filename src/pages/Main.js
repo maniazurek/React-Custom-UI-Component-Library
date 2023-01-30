@@ -2,14 +2,14 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Accordion from "../components-UI/Accordion";
-import Button from "../components-UI/Button";
+import Accordion from "../components-UI/Accordion/Accordion";
+import Button from "../components-UI/Button/Button";
 import Navigation from "../components-website/Navigation";
-import SwitchButton from "../components-UI/SwitchButton";
-import SelectBox from "../components-UI/SelectBox";
-import TagSelectBox from "../components-UI/TagSelectBox";
-import TransferList from "../components-UI/TransferList";
-import Chceckbox from "../components-UI/Checkbox";
+import SwitchButton from "../components-UI/SwitchButton/SwitchButton";
+import SelectBox from "../components-UI/SelectBox/SelectBox";
+import TagSelectBox from "../components-UI/TagSelectBox/TagSelectBox";
+import TransferList from "../components-UI/TransferList/TransferList";
+import Chceckbox from "../components-UI/Checkbox/Checkbox";
 
 const Main = () => {
   const location = useLocation();

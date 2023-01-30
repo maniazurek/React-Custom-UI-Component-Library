@@ -1,13 +1,13 @@
 import React from "react";
-import SectionContainer from "../styled-components-website/SectionContainer";
-import SectionTitle from "../styled-components-website/SectionTitle";
-import SectionDescription from "../styled-components-website/SectionDescription";
-import TransferListUI from "./TransferListUI";
+import SectionContainer from "../../styled-components-website/SectionContainer";
+import SectionTitle from "../../styled-components-website/SectionTitle";
+import SectionDescription from "../../styled-components-website/SectionDescription";
+import TagSelectBoxUI from "./TagSelectBoxUI";
 
-const TransferList = () => {
+const TagSelectBox = () => {
   return (
     <SectionContainer>
-      <SectionTitle>Transfer List</SectionTitle>
+      <SectionTitle>Tag Select Box</SectionTitle>
       <SectionDescription>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -19,9 +19,9 @@ const TransferList = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <TransferListUI />
+      <TagSelectBoxUI />
     </SectionContainer>
   );
 };
 
-export default TransferList;
+export default TagSelectBox;

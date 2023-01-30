@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import selectBoxData from "../utils/selectboxData";
+import selectBoxData from "../../utils/selectboxData";
 
 const SelectBoxUI = () => {
   const [selectedOption, setSelectedOption] = useState({ name: "", id: "" });

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const WelcomeButton = styled.div`
+export const WelcomeButton = styled.div`
   background: #8fb593;
   border: 1px solid #8fb593;
   border-radius: 10px;
@@ -14,5 +14,3 @@ const WelcomeButton = styled.div`
   align-items: center;
   color: #fff;
 `;
-
-export default WelcomeButton;

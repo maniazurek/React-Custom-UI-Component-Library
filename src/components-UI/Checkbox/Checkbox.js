@@ -1,14 +1,13 @@
 import React from "react";
+import SectionContainer from "../../styled-components-website/SectionContainer";
+import SectionTitle from "../../styled-components-website/SectionTitle";
+import SectionDescription from "../../styled-components-website/SectionDescription";
+import CheckboxUI from "./CheckboxUI";
 
-import SectionContainer from "../styled-components-website/SectionContainer";
-import SectionTitle from "../styled-components-website/SectionTitle";
-import SectionDescription from "../styled-components-website/SectionDescription";
-import SelectBoxUI from "./SelectBoxUI";
-
-const SelectBox = () => {
+const Chceckbox = () => {
   return (
     <SectionContainer>
-      <SectionTitle>Select Box</SectionTitle>
+      <SectionTitle>Checkbox</SectionTitle>
       <SectionDescription>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -20,9 +19,9 @@ const SelectBox = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <SelectBoxUI />
+      <CheckboxUI />
     </SectionContainer>
   );
 };
 
-export default SelectBox;
+export default Chceckbox;
