@@ -5,7 +5,7 @@ import SectionTitle from "../styled-components-website/SectionTitle";
 import SectionDescription from "../styled-components-website/SectionDescription";
 import AccordionUI from "./AccordionUI";
 
-const Accordion = () => {
+const Accordion = ({ show }) => {
   return (
     <motion.div>
       <SectionContainer
@@ -25,7 +25,7 @@ const Accordion = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </SectionDescription>
-        <AccordionUI />
+        <AccordionUI show={show} />
       </SectionContainer>
     </motion.div>
   );

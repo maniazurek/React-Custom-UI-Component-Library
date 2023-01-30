@@ -16,14 +16,13 @@ const AccordionItem = ({ id, title, description, disabled, show }) => {
       {!disabled ? (
         <AccordionTitle
           disabled={false}
-          key={id}
           onClick={
             show === "many"
               ? () => setIsOpen(!isOpen)
               : () => onAccordionToggle(event)
           }
         >
-          <div> {title}</div>
+          <div>{title}</div>
           <span
             className={
               isOpen
@@ -35,7 +34,6 @@ const AccordionItem = ({ id, title, description, disabled, show }) => {
       ) : (
         <AccordionTitle disabled={true}>{title}</AccordionTitle>
       )}
-
       {isOpen && <AccordionDescription>{description}</AccordionDescription>}
     </div>
   );

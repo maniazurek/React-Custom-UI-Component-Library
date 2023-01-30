@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import randomData from "../utils/randomData";
+import CheckboxUIItem from "./CheckboxUIItem";
 
 const ChceckboxUI = () => {
   const [selected, setSelected] = useState("false");
@@ -16,13 +17,14 @@ const ChceckboxUI = () => {
   return (
     <>
       {randomData.map((data, event) => (
-        <CheckboxContainer>
-          <Checkbox
-            onClick={() => onSelectedToggle(event)}
-            mode={selected === event ? "true" : "false"}
-          ></Checkbox>
-          <p>{data.name}</p>
-        </CheckboxContainer>
+        // <CheckboxContainer>
+        //   <Checkbox
+        //     onClick={() => onSelectedToggle(event)}
+        //     mode={selected === event ? "true" : "false"}
+        //   ></Checkbox>
+        //   <p>{data.name}</p>
+        // </CheckboxContainer>
+        <CheckboxUIItem id={data.id} name={data.name} checked="many" />
       ))}
     </>
   );

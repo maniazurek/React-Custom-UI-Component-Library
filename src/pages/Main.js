@@ -16,7 +16,7 @@ const Main = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/accordion" element={<Accordion />} />
+        <Route path="/accordion" element={<Accordion show="single" />} />
         <Route path="/button" element={<Button />} />
         <Route path="/checkbox" element={<Chceckbox />} />
         <Route path="/selectbox" element={<SelectBox />} />
