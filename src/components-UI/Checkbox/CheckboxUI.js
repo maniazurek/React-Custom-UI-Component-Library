@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { CheckboxContainer, CheckboxItem } from "../Checkbox/CheckboxStyles";
+import {
+  CheckboxContainer,
+  CheckboxItem,
+  CheckboxSelect,
+  CheckboxData,
+} from "../Checkbox/CheckboxStyles";
 import checkboxData from "../../utils/checkboxData";
 
 const ChceckboxUI = ({ select }) => {
@@ -48,9 +53,18 @@ const ChceckboxUI = ({ select }) => {
   return (
     <>
       {checkboxData.map((data, index) => (
-        <CheckboxContainer onClick={() => onSelectToggle(index)}>
-          <CheckboxItem mode={determineSelect(index)} />
-          <p>{data.name}</p>
+        <CheckboxContainer>
+          {!data.disabled ? (
+            <CheckboxItem onClick={() => onSelectToggle(index)}>
+              <CheckboxSelect mode={determineSelect(index)} />
+              <CheckboxData>{data.name}</CheckboxData>
+            </CheckboxItem>
+          ) : (
+            <CheckboxItem disabled={true}>
+              <CheckboxSelect />
+              <CheckboxData>{data.name}</CheckboxData>
+            </CheckboxItem>
+          )}
         </CheckboxContainer>
       ))}
     </>
