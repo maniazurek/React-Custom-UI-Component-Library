@@ -4,7 +4,7 @@ import SectionTitle from "../../styled-components-website/SectionTitle";
 import SectionDescription from "../../styled-components-website/SectionDescription";
 import CheckboxUI from "./CheckboxUI";
 
-const Chceckbox = () => {
+const Chceckbox = ({ select }) => {
   return (
     <SectionContainer>
       <SectionTitle>Checkbox</SectionTitle>
@@ -19,7 +19,7 @@ const Chceckbox = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <CheckboxUI />
+      <CheckboxUI select={select} />
     </SectionContainer>
   );
 };
