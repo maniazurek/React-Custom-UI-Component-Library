@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SectionDescription from "../../styled-components-website/SectionDescription";
-import SectionContainer from "../../styled-components-website/SectionContainer";
-import SectionTitle from "../../styled-components-website/SectionTitle";
+import { SectionContainer, SectionDescription, SectionTitle } from "../../components-website/ComponentsWebStyles";
 import ButtonUI from "./ButtonUI";
 
 const Button = () => {

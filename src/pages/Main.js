@@ -18,7 +18,7 @@ const Main = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/accordion" element={<Accordion show="single" />} />
         <Route path="/button" element={<Button />} />
-        <Route path="/checkbox" element={<Checkbox select="many" />} />
+        <Route path="/checkbox" element={<Checkbox select="single" />} />
         <Route path="/selectbox" element={<SelectBox />} />
         <Route path="/switchbutton" element={<SwitchButton />} />
         <Route path="/tagselectbox" element={<TagSelectBox />} />

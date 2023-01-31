@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SideNavigation from "../styled-components-website/SideNavigation";
-import NavigationHeader from "../styled-components-website/NavigationHeader";
+import { SideNavigation, NavigationHeader } from "./ComponentsWebStyles";
 import NavigationItems from "./NavigationItems";
 
 const Navigation = () => {
