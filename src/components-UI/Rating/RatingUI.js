@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { RatingContainer } from "./RatingStyles";
 
 const RatingUI = () => {
   const [rating, setRating] = useState(0);
@@ -25,12 +25,5 @@ const RatingUI = () => {
     </RatingContainer>
   );
 };
-
-const RatingContainer = styled.div`
-  display: flex;
-  gap: 5px;
-  cursor: pointer;
-  font-size: 20px;
-`;
 
 export default RatingUI;
