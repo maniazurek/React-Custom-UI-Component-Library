@@ -14,6 +14,9 @@ const NavigationItems = () => {
       <NavLink to="/checkbox">
         <NavigationItem>Checkbox</NavigationItem>
       </NavLink>
+      <NavLink to="/rating">
+        <NavigationItem>Rating</NavigationItem>
+      </NavLink>
       <NavLink to="/selectbox">
         <NavigationItem>Select Box</NavigationItem>
       </NavLink>

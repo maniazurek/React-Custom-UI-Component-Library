@@ -10,6 +10,7 @@ import SelectBox from "../components-UI/SelectBox/SelectBox";
 import TagSelectBox from "../components-UI/TagSelectBox/TagSelectBox";
 import TransferList from "../components-UI/TransferList/TransferList";
 import Checkbox from "../components-UI/Checkbox/Checkbox";
+import Rating from "../components-UI/Rating/Rating";
 
 const Main = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const Main = () => {
         <Route path="/accordion" element={<Accordion show="single" />} />
         <Route path="/button" element={<Button />} />
         <Route path="/checkbox" element={<Checkbox select="single" />} />
+        <Route path="/rating" element={<Rating />} />
         <Route path="/selectbox" element={<SelectBox />} />
         <Route path="/switchbutton" element={<SwitchButton />} />
         <Route path="/tagselectbox" element={<TagSelectBox />} />
