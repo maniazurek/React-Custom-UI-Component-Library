@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RatingContainer } from "./RatingStyles";
 
 const RatingUI = () => {
   const [rating, setRating] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("click", () => setRating(0));
+  }, []);
+
   return (
     <RatingContainer>
       {Array(5)
@@ -12,13 +17,19 @@ const RatingUI = () => {
             <i
               class="fa-solid fa-star"
               style={{ color: "#ffd700" }}
-              onClick={() => setRating(index + 1)}
+              onClick={(event) => {
+                setRating(index + 1);
+                event.stopPropagation();
+              }}
             ></i>
           ) : (
             <i
               class="fa-regular fa-star"
               style={{ color: "#ffd700" }}
-              onClick={() => setRating(index + 1)}
+              onClick={(event) => {
+                setRating(index + 1);
+                event.stopPropagation();
+              }}
             ></i>
           )
         )}
