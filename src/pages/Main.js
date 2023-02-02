@@ -11,6 +11,7 @@ import TagSelectBox from "../components-UI/TagSelectBox/TagSelectBox";
 import TransferList from "../components-UI/TransferList/TransferList";
 import Checkbox from "../components-UI/Checkbox/Checkbox";
 import Rating from "../components-UI/Rating/Rating";
+import Swiper from "../components-UI/Swiper/Swiper";
 
 const Main = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const Main = () => {
           }
         />
         <Route path="/selectbox" element={<SelectBox />} />
+        <Route path="/swiper" element={<Swiper />} />
         <Route path="/switchbutton" element={<SwitchButton />} />
         <Route path="/tagselectbox" element={<TagSelectBox />} />
         <Route path="/transferlist" element={<TransferList />} />

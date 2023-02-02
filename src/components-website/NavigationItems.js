@@ -20,6 +20,9 @@ const NavigationItems = () => {
       <NavLink to="/selectbox">
         <NavigationItem>Select Box</NavigationItem>
       </NavLink>
+      <NavLink to="/swiper">
+        <NavigationItem>Swiper</NavigationItem>
+      </NavLink>
       <NavLink to="/switchbutton">
         <NavigationItem>Switch Button</NavigationItem>
       </NavLink>
