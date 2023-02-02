@@ -6,3 +6,8 @@ body {
 a:-webkit-any-link {
   text-decoration: none;
 }
+
+.pointer {
+  cursor: pointer;
+  color: #8fb593;
+}
