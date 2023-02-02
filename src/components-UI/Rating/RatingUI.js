@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { RatingContainer } from "./RatingStyles";
 
-const RatingUI = () => {
+const RatingUI = ({ stars }) => {
   const [rating, setRating] = useState(0);
 
   useEffect(() => {
@@ -11,11 +11,12 @@ const RatingUI = () => {
   const onAddRating = (event, index) => {
     setRating(index + 1);
     event.stopPropagation();
+    s;
   };
 
   return (
     <RatingContainer>
-      {Array(5)
+      {Array(Number(stars))
         .fill()
         .map((_, index) =>
           index + 1 <= rating ? (
