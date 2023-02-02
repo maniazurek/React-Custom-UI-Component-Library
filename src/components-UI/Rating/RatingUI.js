@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { RatingContainer, RatingComment } from "./RatingStyles";
-import styled from "styled-components";
 
-const RatingUI = ({ stars }) => {
+const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState(null);
 
@@ -21,17 +20,19 @@ const RatingUI = ({ stars }) => {
     if (rating === 0) {
       return setComment(null);
     } else if (rating <= stars / 5) {
-      return setComment("poor");
+      return setComment(poor);
     } else if (rating <= stars / 2.5) {
-      return setComment("ok");
+      return setComment(ok);
     } else if (rating <= stars / 1.6) {
-      return setComment("good");
+      return setComment(good);
     } else if (rating <= stars / 1.25) {
-      return setComment("very good");
+      return setComment(verygood);
     } else if (rating === stars / 1) {
-      return setComment("excellent");
+      return setComment(excellent);
     }
   };
+
+  console.log(rating);
 
   return (
     <>

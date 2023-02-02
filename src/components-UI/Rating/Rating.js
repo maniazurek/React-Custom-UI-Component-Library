@@ -6,7 +6,7 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import RatingUI from "./RatingUI";
 
-const Rating = ({stars}) => {
+const Rating = ({ stars, poor, ok, good, verygood, excellent }) => {
   return (
     <SectionContainer>
       <SectionTitle>Rating</SectionTitle>
@@ -21,7 +21,14 @@ const Rating = ({stars}) => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <RatingUI stars={stars}/>
+      <RatingUI
+        stars={stars}
+        poor={poor}
+        ok={ok}
+        good={good}
+        verygood={verygood}
+        excellent={excellent}
+      />
     </SectionContainer>
   );
 };
