@@ -8,6 +8,11 @@ const RatingUI = () => {
     window.addEventListener("click", () => setRating(0));
   }, []);
 
+  const onAddRating = (event, index) => {
+    setRating(index + 1);
+    event.stopPropagation();
+  };
+
   return (
     <RatingContainer>
       {Array(5)
@@ -17,19 +22,13 @@ const RatingUI = () => {
             <i
               class="fa-solid fa-star"
               style={{ color: "#ffd700" }}
-              onClick={(event) => {
-                setRating(index + 1);
-                event.stopPropagation();
-              }}
+              onClick={(event) => onAddRating(event, index)}
             ></i>
           ) : (
             <i
               class="fa-regular fa-star"
               style={{ color: "#ffd700" }}
-              onClick={(event) => {
-                setRating(index + 1);
-                event.stopPropagation();
-              }}
+              onClick={(event) => onAddRating(event, index)}
             ></i>
           )
         )}
