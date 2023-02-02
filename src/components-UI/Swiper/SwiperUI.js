@@ -52,7 +52,7 @@ const SwiperUI = () => {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr 1fr",
-          gap: "15px",
+          gap: "10px",
         }}
       >
         {swiperData.map((item, index) => (
@@ -77,7 +77,6 @@ const SwiperItemMain = styled.div`
   height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 5px;
   background-image: ${({ image }) => image && `url(${image})`};
 `;
 
@@ -89,9 +88,8 @@ const SwiperItem = styled.div`
   background-repeat: no-repeat;
   border-radius: 5px;
   background-image: ${({ image }) => image && `url(${image})`};
-  border-style: solid;
-  border-color: ${({ selected }) =>
-    selected === "selected" ? "#8fb593" : "#fff"};
+  border: ${({ selected }) =>
+    selected === "selected" ? "4px solid #8fb593" : "4px solid #fff"};
 `;
 
 export default SwiperUI;
