@@ -27,30 +27,42 @@ const SwiperUI = () => {
     onSwiperChangeLeft();
   };
 
-  console.log(swiperShowed);
-  console.log(swiperData.length);
-
   return (
     <SwiperContainer>
-      <i
-        class="fa-solid fa-angles-left fa-2xl"
-        onClick={onSwipeToLeft}
-        style={{ cursor: "pointer" }}
-      ></i>
-      {swiperData.map((item, index) => (
-        <div>
-          {swiperShowed === index ? (
-            <SwiperItemMain image={item.imageURL}></SwiperItemMain>
-          ) : (
-            <SwiperItem image={item.imageURL}></SwiperItem>
-          )}
-        </div>
-      ))}
-      <i
-        class="fa-solid fa-angles-right fa-2xl"
-        onClick={onSwipeToRight}
-        style={{ cursor: "pointer" }}
-      ></i>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <i
+          class="fa-solid fa-angles-left fa-2xl"
+          onClick={onSwipeToLeft}
+          style={{ cursor: "pointer", color: "#8fb593" }}
+        ></i>
+        {swiperData.map((item, index) => (
+          <div>
+            {swiperShowed === index && (
+              <SwiperItemMain image={item.imageURL}></SwiperItemMain>
+            )}
+          </div>
+        ))}
+        <i
+          class="fa-solid fa-angles-right fa-2xl"
+          onClick={onSwipeToRight}
+          style={{ cursor: "pointer", color: "#8fb593" }}
+        ></i>
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr 1fr 1fr",
+          gap: "15px",
+        }}
+      >
+        {swiperData.map((item, index) => (
+          <SwiperItem
+            image={item.imageURL}
+            selected={swiperShowed === index ? "selected" : "notselected"}
+            onClick={() => setSwiperShowed(index)}
+          ></SwiperItem>
+        ))}
+      </div>
     </SwiperContainer>
   );
 };
@@ -61,7 +73,7 @@ const SwiperContainer = styled.div`
 `;
 
 const SwiperItemMain = styled.div`
-  width: 400px;
+  width: 500px;
   height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,12 +82,16 @@ const SwiperItemMain = styled.div`
 `;
 
 const SwiperItem = styled.div`
-  width: 200px;
-  height: 200px;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px;
   background-image: ${({ image }) => image && `url(${image})`};
+  border-style: solid;
+  border-color: ${({ selected }) =>
+    selected === "selected" ? "#8fb593" : "#fff"};
 `;
 
 export default SwiperUI;
