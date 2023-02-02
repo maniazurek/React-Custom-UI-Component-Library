@@ -18,17 +18,17 @@ const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
 
   const onAddRatingComment = (stars) => {
     if (rating === 0) {
-      return setComment(null);
+      setComment(null);
     } else if (rating <= stars / 5) {
-      return setComment(poor);
+      setComment(poor);
     } else if (rating <= stars / 2.5) {
-      return setComment(ok);
+      setComment(ok);
     } else if (rating <= stars / 1.6) {
-      return setComment(good);
+      setComment(good);
     } else if (rating <= stars / 1.25) {
-      return setComment(verygood);
+      setComment(verygood);
     } else if (rating === stars / 1) {
-      return setComment(excellent);
+      setComment(excellent);
     }
   };
 
