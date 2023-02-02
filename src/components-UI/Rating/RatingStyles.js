@@ -6,3 +6,7 @@ export const RatingContainer = styled.div`
   cursor: pointer;
   font-size: 20px;
 `;
+
+export const RatingComment = styled.p`
+  font-size: 18px;
+`;
