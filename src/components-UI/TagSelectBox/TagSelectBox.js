@@ -1,5 +1,9 @@
 import React from "react";
-import { SectionContainer, SectionDescription, SectionTitle } from "../../components-website/ComponentsWebStyles";
+import {
+  SectionContainer,
+  SectionDescription,
+  SectionTitle,
+} from "../../components-website/ComponentsWebStyles";
 import TagSelectBoxUI from "./TagSelectBoxUI";
 
 const TagSelectBox = () => {

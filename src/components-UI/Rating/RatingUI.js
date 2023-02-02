@@ -32,6 +32,8 @@ const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
     }
   };
 
+  console.log(rating);
+
   return (
     <>
       <RatingContainer>

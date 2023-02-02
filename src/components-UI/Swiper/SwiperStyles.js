@@ -11,7 +11,7 @@ export const SwiperMainContainer = styled.div`
 `;
 
 export const SwiperItemMainContainer = styled.div`
-//   margin: 0 5px;
+  //   margin: 0 5px;
 `;
 
 export const SwiperItemMain = styled.div`
@@ -27,6 +27,9 @@ export const SwiperItems = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
+  width: 542px;
+  height: 404px;
+  overflow: scroll;
 `;
 
 export const SwiperItem = styled.div`
