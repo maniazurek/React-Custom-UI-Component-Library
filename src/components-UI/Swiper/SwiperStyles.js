@@ -12,6 +12,8 @@ export const SwiperMainContainer = styled.div`
   gap: 10px;
 `;
 
+export const SwiperItemsMainContainer = styled.div``;
+
 export const SwiperItemMainContainer = styled.div``;
 
 export const SwiperItemMain = styled.div`

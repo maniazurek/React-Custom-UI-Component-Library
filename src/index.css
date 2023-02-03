@@ -11,3 +11,7 @@ a:-webkit-any-link {
   cursor: pointer;
   color: #8fb593;
 }
+
+.pointer-disabled {
+  color: #808080;
+}

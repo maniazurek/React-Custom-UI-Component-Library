@@ -25,7 +25,7 @@ const Main = () => {
           path="/rating"
           element={
             <Rating
-              stars="5"
+              stars="10"
               poor="poor"
               ok="ok"
               good="good"

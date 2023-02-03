@@ -3,6 +3,7 @@ import swiperData from "../../utils/swiperData";
 import {
   SwiperContainer,
   SwiperMainContainer,
+  SwiperItemsMainContainer,
   SwiperItemMainContainer,
   SwiperItemMain,
   SwiperItems,
@@ -42,7 +43,7 @@ const SwiperUI = () => {
           onClick={onSwipeToLeft}
           style={{ cursor: "pointer", color: "#8fb593" }}
         ></i>
-        <div>
+        <SwiperItemsMainContainer>
           {swiperData.map((item, index) => (
             <SwiperItemMainContainer>
               {swiperShowed === index && (
@@ -50,7 +51,7 @@ const SwiperUI = () => {
               )}
             </SwiperItemMainContainer>
           ))}
-        </div>
+        </SwiperItemsMainContainer>
         <i
           class="fa-solid fa-angles-right fa-2xl"
           onClick={onSwipeToRight}
