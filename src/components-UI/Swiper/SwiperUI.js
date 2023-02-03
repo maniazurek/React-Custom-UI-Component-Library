@@ -42,11 +42,15 @@ const SwiperUI = () => {
           onClick={onSwipeToLeft}
           style={{ cursor: "pointer", color: "#8fb593" }}
         ></i>
-        {swiperData.map((item, index) => (
-          <SwiperItemMainContainer>
-            {swiperShowed === index && <SwiperItemMain image={item.imageURL} />}
-          </SwiperItemMainContainer>
-        ))}
+        <div>
+          {swiperData.map((item, index) => (
+            <SwiperItemMainContainer>
+              {swiperShowed === index && (
+                <SwiperItemMain image={item.imageURL} />
+              )}
+            </SwiperItemMainContainer>
+          ))}
+        </div>
         <i
           class="fa-solid fa-angles-right fa-2xl"
           onClick={onSwipeToRight}

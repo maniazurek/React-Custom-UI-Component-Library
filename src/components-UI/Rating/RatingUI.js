@@ -10,29 +10,46 @@ const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
     window.addEventListener("click", () => setComment(null));
   }, []);
 
+  useEffect(() => {
+    const onAddRatingComment = () => {
+      if (rating === 0) {
+        setComment(null);
+      } else if (rating <= stars / 5) {
+        setComment(poor);
+      } else if (rating <= stars / 2.5) {
+        setComment(ok);
+      } else if (rating <= stars / 1.6) {
+        setComment(good);
+      } else if (rating <= stars / 1.25) {
+        setComment(verygood);
+      } else if (rating === stars / 1) {
+        setComment(excellent);
+      }
+    };
+    onAddRatingComment();
+  }, [rating, stars]);
+
   const onAddRating = (event, index) => {
     setRating(index + 1);
-    onAddRatingComment(stars);
+    // onAddRatingComment(stars);
     event.stopPropagation();
   };
 
-  const onAddRatingComment = (stars) => {
-    if (rating === 0) {
-      setComment(null);
-    } else if (rating <= stars / 5) {
-      setComment(poor);
-    } else if (rating <= stars / 2.5) {
-      setComment(ok);
-    } else if (rating <= stars / 1.6) {
-      setComment(good);
-    } else if (rating <= stars / 1.25) {
-      setComment(verygood);
-    } else if (rating === stars / 1) {
-      setComment(excellent);
-    }
-  };
-
-  console.log(rating);
+  // const onAddRatingComment = (stars) => {
+  //   if (rating === 0) {
+  //     setComment(null);
+  //   } else if (rating <= stars / 5) {
+  //     setComment(poor);
+  //   } else if (rating <= stars / 2.5) {
+  //     setComment(ok);
+  //   } else if (rating <= stars / 1.6) {
+  //     setComment(good);
+  //   } else if (rating <= stars / 1.25) {
+  //     setComment(verygood);
+  //   } else if (rating === stars / 1) {
+  //     setComment(excellent);
+  //   }
+  // };
 
   return (
     <>
