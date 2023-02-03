@@ -34,6 +34,7 @@ const TransferListUI = () => {
       )
     );
     setSelectedArray([...selectedArray, defaultArray[chosenDefault]]);
+    setChosenSelected(selectedArray.length);
   };
 
   const onAddToDefaultArray = (chosenSelected) => {
@@ -43,15 +44,18 @@ const TransferListUI = () => {
       )
     );
     setDefaultArray([...defaultArray, selectedArray[chosenSelected]]);
+    setChosenDefault(defaultArray.length);
   };
 
   const onAddAllToSelectedArray = () => {
     setSelectedArray([...selectedArray, ...defaultArray]);
+    setChosenSelected(0);
     setDefaultArray([]);
   };
 
   const onDeleteAllFromSelectedArray = () => {
     setDefaultArray([...defaultArray, ...selectedArray]);
+    setChosenDefault(0);
     setSelectedArray([]);
   };
 
