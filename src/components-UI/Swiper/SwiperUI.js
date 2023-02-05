@@ -39,13 +39,13 @@ const SwiperUI = () => {
     <SwiperContainer>
       <SwiperMainContainer>
         <i
-          class="fa-solid fa-angles-left fa-2xl"
+          className="fa-solid fa-angles-left fa-2xl"
           onClick={onSwipeToLeft}
           style={{ cursor: "pointer", color: "#8fb593" }}
         ></i>
         <SwiperItemsMainContainer>
           {swiperData.map((item, index) => (
-            <SwiperItemMainContainer>
+            <SwiperItemMainContainer key={item.id}>
               {swiperShowed === index && (
                 <SwiperItemMain image={item.imageURL} />
               )}
@@ -53,7 +53,7 @@ const SwiperUI = () => {
           ))}
         </SwiperItemsMainContainer>
         <i
-          class="fa-solid fa-angles-right fa-2xl"
+          className="fa-solid fa-angles-right fa-2xl"
           onClick={onSwipeToRight}
           style={{ cursor: "pointer", color: "#8fb593" }}
         ></i>
@@ -61,6 +61,7 @@ const SwiperUI = () => {
       <SwiperItems>
         {swiperData.map((item, index) => (
           <SwiperItem
+            key={item.id}
             image={item.imageURL}
             selected={swiperShowed === index && "selected"}
             onClick={() => setSwiperShowed(index)}

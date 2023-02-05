@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import Accordion from "../components-UI/Accordion/Accordion";
 import Button from "../components-UI/Button/Button";
 import Navigation from "../components-website/Navigation";
@@ -14,10 +13,9 @@ import Rating from "../components-UI/Rating/Rating";
 import Swiper from "../components-UI/Swiper/Swiper";
 
 const Main = () => {
-  const location = useLocation();
   return (
-    <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
+    <>
+      <Routes>
         <Route path="/accordion" element={<Accordion show="single" />} />
         <Route path="/button" element={<Button />} />
         <Route path="/checkbox" element={<Checkbox select="single" />} />
@@ -42,7 +40,7 @@ const Main = () => {
       </Routes>
       <Outlet />
       <Navigation />
-    </AnimatePresence>
+    </>
   );
 };
 

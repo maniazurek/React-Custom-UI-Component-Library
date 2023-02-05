@@ -72,7 +72,7 @@ const SelectBoxUI = () => {
         />
         {selectedOption.name && (
           <i
-            class="fa-solid fa-x"
+            className="fa-solid fa-x"
             style={{
               cursor: "pointer",
               color: "#585858",

@@ -53,7 +53,7 @@ const ChceckboxUI = ({ select }) => {
   return (
     <>
       {checkboxData.map((data, index) => (
-        <CheckboxContainer>
+        <CheckboxContainer key={data.id}>
           {!data.disabled ? (
             <CheckboxItem onClick={() => onSelectToggle(index)}>
               <CheckboxSelect mode={determineSelect(index)} />

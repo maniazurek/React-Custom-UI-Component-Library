@@ -49,7 +49,8 @@ const TransferListUI = () => {
 
   const onAddAllToSelectedArray = () => {
     setSelectedArray([...selectedArray, ...defaultArray]);
-    setChosenSelected(0);
+    setChosenSelected(selectedArray.length);
+    setChosenDefault(0);
     setDefaultArray([]);
   };
 
@@ -64,6 +65,7 @@ const TransferListUI = () => {
       <TransferList>
         {defaultArray.map((data, index) => (
           <TransferListElement
+            key={data.id}
             clicked={index === chosenDefault && "clicked"}
             onClick={() => setChosenDefault(index)}
           >
@@ -74,34 +76,34 @@ const TransferListUI = () => {
       <TransferItemContainer>
         {defaultArray.length === 0 ? (
           <>
-            <i class="fa-solid fa-angles-right fa-lg pointer pointer-disabled"></i>
-            <i class="fa-solid fa-chevron-right fa-lg pointer pointer-disabled"></i>
+            <i className="fa-solid fa-angles-right fa-lg pointer pointer-disabled"></i>
+            <i className="fa-solid fa-chevron-right fa-lg pointer pointer-disabled"></i>
           </>
         ) : (
           <>
             <i
-              class="fa-solid fa-angles-right fa-lg pointer"
+              className="fa-solid fa-angles-right fa-lg pointer"
               onClick={onAddAllToSelectedArray}
             ></i>
             <i
-              class="fa-solid fa-chevron-right fa-lg pointer"
+              className="fa-solid fa-chevron-right fa-lg pointer"
               onClick={() => onAddToSelectedArray(chosenDefault)}
             ></i>
           </>
         )}
         {selectedArray.length === 0 ? (
           <>
-            <i class="fa-solid fa-chevron-left fa-lg pointer pointer-disabled"></i>
-            <i class="fa-solid fa-angles-left fa-lg pointer pointer-disabled"></i>
+            <i className="fa-solid fa-chevron-left fa-lg pointer pointer-disabled"></i>
+            <i className="fa-solid fa-angles-left fa-lg pointer pointer-disabled"></i>
           </>
         ) : (
           <>
             <i
-              class="fa-solid fa-chevron-left fa-lg pointer"
+              className="fa-solid fa-chevron-left fa-lg pointer"
               onClick={() => onAddToDefaultArray(chosenSelected)}
             ></i>
             <i
-              class="fa-solid fa-angles-left fa-lg pointer"
+              className="fa-solid fa-angles-left fa-lg pointer"
               onClick={onDeleteAllFromSelectedArray}
             ></i>
           </>
@@ -110,6 +112,7 @@ const TransferListUI = () => {
       <TransferList>
         {selectedArray.map((data, index) => (
           <TransferListElement
+            key={data.id}
             clicked={index === chosenSelected && "clicked"}
             onClick={() => setChosenSelected(index)}
           >

@@ -25,3 +25,6 @@ export const AccordionDescription = styled.div`
   padding: 8px;
   width: 500px;
 `;
+
+export const AccordionContainer = styled.div`
+`

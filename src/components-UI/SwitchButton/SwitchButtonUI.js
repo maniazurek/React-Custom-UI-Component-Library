@@ -15,9 +15,9 @@ const SwitchButtonUI = () => {
   return (
     <SwitchButtonContainer
       onClick={() => setModeStyle(!modeStyle)}
-      mode={modeStyle ? true : false}
+      mode={modeStyle}
     >
-      <SwitchBall mode={modeStyle ? true : false} />
+      <SwitchBall mode={modeStyle} />
     </SwitchButtonContainer>
   );
 };

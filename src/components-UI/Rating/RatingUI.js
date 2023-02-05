@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import uniqid from "uniqid";
 import { RatingContainer, RatingComment } from "./RatingStyles";
 
 const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
@@ -42,13 +43,15 @@ const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
           .map((_, index) =>
             index + 1 <= rating ? (
               <i
-                class="fa-solid fa-star"
+                key={uniqid()}
+                className="fa-solid fa-star"
                 style={{ color: "#ffd700" }}
                 onClick={(event) => onAddRating(event, index)}
               ></i>
             ) : (
               <i
-                class="fa-regular fa-star"
+                key={uniqid()}
+                className="fa-regular fa-star"
                 style={{ color: "#ffd700" }}
                 onClick={(event) => onAddRating(event, index)}
               ></i>
