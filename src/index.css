@@ -15,20 +15,3 @@ a:-webkit-any-link {
 .pointer-disabled {
   color: #808080;
 }
-
-.new-task__tags-suggestions_element {
-  border: 1px solid #c9d2e1;
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 15px;
-  padding: 3px 9px;
-  font-size: 10px;
-}
-
-.new-task__tags-selected {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-  cursor: pointer;
-}

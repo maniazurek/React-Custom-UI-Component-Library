@@ -9,6 +9,7 @@ export const SelectContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-y: auto;
 `;
 
 export const SelectInput = styled.input`
@@ -17,6 +18,7 @@ export const SelectInput = styled.input`
   color: #585858;
   font-family: "Playfair Display", serif;
   font-size: 16px;
+  margin-right: auto;
 `;
 
 export const SelectList = styled.ul`
