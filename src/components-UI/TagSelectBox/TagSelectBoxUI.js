@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tagsSuggestionsData from "../../utils/tagsSuggestionsData";
+import { SelectInput, SelectContainer } from "../SelectBox/SelectBoxStyles";
 import styled from "styled-components";
 
 const TagSelectBoxUI = () => {
@@ -55,62 +56,103 @@ const TagSelectBoxUI = () => {
   };
 
   return (
-    <div className="new-task__form-tags">
-      <div className="new-task__tags-input_suggestions">
-        <input
-          placeholder="Type tag..."
-          onKeyPress={onFormSubmit}
-          className="new-task__select-tags"
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          onClick={(event) => {
-            setIsSuggestionsOpen(true);
-            event.stopPropagation();
-          }}
-        />
+    <>
+      <TagSelectContainer>
+        <SelectContainer>
+          <SelectInput
+            placeholder="Type tag..."
+            onKeyPress={onFormSubmit}
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            onClick={(event) => {
+              setIsSuggestionsOpen(true);
+              event.stopPropagation();
+            }}
+          />
+        </SelectContainer>
         {isSuggestionsOpen && (
-          <span className="new-task__tags-instruction">
-            Type tag or choose from the list:
-          </span>
+          <TagToSelectContainer>
+            {isSuggestionsOpen &&
+              internalTagsSuggestions
+                .filter((tag) =>
+                  tag.name.toLowerCase().startsWith(inputValue.toLowerCase())
+                )
+                .map((tag) => (
+                  <TagToSelect
+                    style={{ color: tag.color }}
+                    key={tag._id}
+                    onClick={() => handleTagAdd(tag._id)}
+                  >
+                    {tag.name}
+                  </TagToSelect>
+                ))}
+          </TagToSelectContainer>
         )}
-
-        <div className="new-task__tags-suggestions">
-          {isSuggestionsOpen &&
-            internalTagsSuggestions
-              .filter((tag) =>
-                tag.name.toLowerCase().startsWith(inputValue.toLowerCase())
-              )
-              .map((tag) => (
-                <span
-                  style={{ color: tag.color }}
-                  key={tag._id}
-                  onClick={() => handleTagAdd(tag._id)}
-                  className="new-task__tags-suggestions_element"
-                >
-                  {tag.name}
-                </span>
-              ))}
-        </div>
-      </div>
+      </TagSelectContainer>
       <div className="new-task__tags-selected">
         {tags.map((tagID) => {
           const currentTag = tagsSuggestionsData.find(
             (tagToShow) => tagToShow._id === tagID
           );
           return (
-            <span
-              className="new-task__tag-selected"
+            <SelectedTag
               style={{ backgroundColor: currentTag.color }}
               key={tagID}
             >
-              <span onClick={() => handleTagRemove(tagID)}>X </span>
+              <i
+                className="fa-solid fa-x"
+                style={{
+                  cursor: "pointer",
+                  color: "#000",
+                  fontSize: "12px",
+                }}
+                onClick={() => handleTagRemove(tagID)}
+              ></i>
               {currentTag.name}
-            </span>
+            </SelectedTag>
           );
         })}
       </div>
-    </div>
+    </>
   );
 };
+
+const TagSelectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SelectedTag = styled.span`
+  border-radius: 6px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+`;
+
+const TagToSelectContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 250px;
+  height: fit-content;
+  overflow-x: auto;
+  border: 1px solid #8fb593;
+  border-radius: 11px;
+  border-top: none;
+  padding: 7px 10px 7px 7px;
+`;
+
+const TagToSelect = styled.span`
+  border: 1px solid #585858;
+  border-radius: 6px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+`;
 
 export default TagSelectBoxUI;

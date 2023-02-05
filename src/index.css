@@ -16,35 +16,6 @@ a:-webkit-any-link {
   color: #808080;
 }
 
-.new-task__tags-input_suggestions {
-  display: flex;
-  margin-top: 5px;
-  gap: 20px;
-}
-
-.new-task__select-tags {
-  background-image: none;
-}
-
-.new-task__tags-instruction {
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 150%;
-  letter-spacing: -0.02em;
-  color: #71757b;
-  font-family: "Karla", sans-serif;
-}
-
-.new-task__tags-suggestions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 33px;
-  overflow-x: auto;
-  cursor: pointer;
-}
-
 .new-task__tags-suggestions_element {
   border: 1px solid #c9d2e1;
   border-radius: 6px;
@@ -60,9 +31,4 @@ a:-webkit-any-link {
   margin-top: 10px;
   flex-wrap: wrap;
   cursor: pointer;
-}
-
-.new-task__tag-selected {
-  border-radius: 6px;
-  padding: 6px 12px;
 }
