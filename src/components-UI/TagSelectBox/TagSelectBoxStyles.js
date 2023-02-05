@@ -13,6 +13,7 @@ export const SingleTag = styled.span`
   align-items: center;
   gap: 2px;
   font-size: 13px;
+  min-width: fit-content;
 `;
 
 export const TagToSelectContainer = styled.div`
@@ -43,4 +44,5 @@ export const TagToSelect = styled.span`
 export const SelectedTagsContainer = styled.div`
   display: flex;
   gap: 10px;
+  height: -webkit-fill-available;
 `;
