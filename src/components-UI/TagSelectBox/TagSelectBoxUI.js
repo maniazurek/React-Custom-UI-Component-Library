@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import tagsSuggestionsData from "../../utils/tagsSuggestionsData";
 import { SelectInput, SelectContainer } from "../SelectBox/SelectBoxStyles";
-import styled from "styled-components";
+import {
+  TagSelectContainer,
+  SingleTag,
+  TagToSelectContainer,
+  SelectedTagsContainer,
+} from "./TagSelectBoxStyles";
 
 const TagSelectBoxUI = () => {
   const [inputValue, setInputValue] = useState("");
@@ -28,11 +33,11 @@ const TagSelectBoxUI = () => {
       const matchingTag = tagsSuggestionsData.find(
         (tag) => tag.name === inputValue
       );
-      const existingTag = tags.find((tag) => tag === matchingTag._id);
+      const existingTag = tags.find((tag) => tag === matchingTag.id);
       if (matchingTag && !existingTag) {
-        onTagAdd(matchingTag._id);
+        onTagAdd(matchingTag.id);
         setInternalTagsSuggestions(
-          internalTagsSuggestions.filter((tag) => tag._id !== matchingTag._id)
+          internalTagsSuggestions.filter((tag) => tag.id !== matchingTag.id)
         );
       }
       setInputValue("");
@@ -42,7 +47,7 @@ const TagSelectBoxUI = () => {
   const handleTagAdd = (tagToAddID) => {
     onTagAdd(tagToAddID);
     setInternalTagsSuggestions(
-      internalTagsSuggestions.filter((tag) => tag._id !== tagToAddID)
+      internalTagsSuggestions.filter((tag) => tag.id !== tagToAddID)
     );
     setInputValue("");
   };
@@ -50,7 +55,7 @@ const TagSelectBoxUI = () => {
   const handleTagRemove = (tagToRemoveID) => {
     onTagRemove(tagToRemoveID);
     const removedTag = tagsSuggestionsData.find(
-      (tag) => tag._id === tagToRemoveID
+      (tag) => tag.id === tagToRemoveID
     );
     setInternalTagsSuggestions([...internalTagsSuggestions, removedTag]);
   };
@@ -61,10 +66,10 @@ const TagSelectBoxUI = () => {
         <SelectedTagsContainer>
           {tags.map((tagID) => {
             const currentTag = tagsSuggestionsData.find(
-              (tagToShow) => tagToShow._id === tagID
+              (tagToShow) => tagToShow.id === tagID
             );
             return (
-              <SelectedTag
+              <SingleTag
                 style={{ backgroundColor: currentTag.color }}
                 key={tagID}
               >
@@ -78,7 +83,7 @@ const TagSelectBoxUI = () => {
                   onClick={() => handleTagRemove(tagID)}
                 ></i>
                 {currentTag.name}
-              </SelectedTag>
+              </SingleTag>
             );
           })}
         </SelectedTagsContainer>
@@ -101,63 +106,18 @@ const TagSelectBoxUI = () => {
                 tag.name.toLowerCase().startsWith(inputValue.toLowerCase())
               )
               .map((tag) => (
-                <SelectedTag
+                <SingleTag
                   style={{ backgroundColor: tag.color, cursor: "pointer" }}
-                  key={tag._id}
-                  onClick={() => handleTagAdd(tag._id)}
+                  key={tag.id}
+                  onClick={() => handleTagAdd(tag.id)}
                 >
                   {tag.name}
-                </SelectedTag>
+                </SingleTag>
               ))}
         </TagToSelectContainer>
       )}
     </TagSelectContainer>
   );
 };
-
-const TagSelectContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const SelectedTag = styled.span`
-  border-radius: 6px;
-  padding: 6px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  font-size: 13px;
-`;
-
-const TagToSelectContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 250px;
-  height: fit-content;
-  overflow-x: auto;
-  border: 1px solid #8fb593;
-  border-radius: 11px;
-  border-top: none;
-  padding: 7px 10px 7px 7px;
-  max-height: 150px;
-`;
-
-const TagToSelect = styled.span`
-  border: 1px solid #585858;
-  border-radius: 6px;
-  padding: 6px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  cursor: pointer;
-`;
-
-const SelectedTagsContainer = styled.div`
-  display: flex;
-  gap: 10px;
-`;
 
 export default TagSelectBoxUI;
