@@ -40,9 +40,3 @@ export const TagToSelect = styled.span`
   gap: 2px;
   cursor: pointer;
 `;
-
-export const SelectedTagsContainer = styled.div`
-  display: flex;
-  gap: 10px;
-  height: -webkit-fill-available;
-`;

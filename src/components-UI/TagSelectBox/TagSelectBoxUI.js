@@ -31,7 +31,7 @@ const TagSelectBoxUI = () => {
     if (event.key === "Enter") {
       event.preventDefault();
       const matchingTag = tagsSuggestionsData.find(
-        (tag) => tag.name === inputValue
+        (tag) => tag.name.toLocaleLowerCase() === inputValue
       );
       const existingTag = tags.find((tag) => tag === matchingTag.id);
       if (matchingTag && !existingTag) {
@@ -63,30 +63,28 @@ const TagSelectBoxUI = () => {
   return (
     <TagSelectContainer>
       <SelectContainer>
-        <SelectedTagsContainer>
-          {tags.map((tagID) => {
-            const currentTag = tagsSuggestionsData.find(
-              (tagToShow) => tagToShow.id === tagID
-            );
-            return (
-              <SingleTag
-                style={{ backgroundColor: currentTag.color }}
-                key={tagID}
-              >
-                <i
-                  className="fa-solid fa-x"
-                  style={{
-                    cursor: "pointer",
-                    color: "#000",
-                    fontSize: "12px",
-                  }}
-                  onClick={() => handleTagRemove(tagID)}
-                ></i>
-                {currentTag.name}
-              </SingleTag>
-            );
-          })}
-        </SelectedTagsContainer>
+        {tags.map((tagID) => {
+          const currentTag = tagsSuggestionsData.find(
+            (tagToShow) => tagToShow.id === tagID
+          );
+          return (
+            <SingleTag
+              style={{ backgroundColor: currentTag.color }}
+              key={tagID}
+            >
+              <i
+                className="fa-solid fa-x"
+                style={{
+                  cursor: "pointer",
+                  color: "#000",
+                  fontSize: "12px",
+                }}
+                onClick={() => handleTagRemove(tagID)}
+              ></i>
+              {currentTag.name}
+            </SingleTag>
+          );
+        })}
         <SelectInput
           placeholder="Type tag..."
           onKeyPress={onFormSubmit}

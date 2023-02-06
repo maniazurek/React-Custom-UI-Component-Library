@@ -10,6 +10,7 @@ export const SelectContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   overflow-y: auto;
+  gap: 10px;
 `;
 
 export const SelectInput = styled.input`
