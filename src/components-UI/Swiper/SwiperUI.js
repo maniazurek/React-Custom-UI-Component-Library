@@ -47,7 +47,7 @@ const SwiperUI = () => {
           {swiperData.map((item, index) => (
             <SwiperItemMainContainer key={item.id}>
               {swiperShowed === index && (
-                <SwiperItemMain image={item.imageURL} />
+                <SwiperItemMain animated={true} image={item.imageURL} />
               )}
             </SwiperItemMainContainer>
           ))}

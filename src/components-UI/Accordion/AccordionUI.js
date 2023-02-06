@@ -58,7 +58,9 @@ const AccordionUI = ({ show }) => {
     if (show === "many") {
       if (areOpen.includes(index)) {
         return (
-          <AccordionDescription>{accordion.description}</AccordionDescription>
+          <AccordionDescription animated={true}>
+            {accordion.description}
+          </AccordionDescription>
         );
       } else {
         return null;
@@ -66,7 +68,9 @@ const AccordionUI = ({ show }) => {
     } else if (show === "single") {
       if (isOpen === index) {
         return (
-          <AccordionDescription>{accordion.description}</AccordionDescription>
+          <AccordionDescription animated={true}>
+            {accordion.description}
+          </AccordionDescription>
         );
       } else {
         return null;

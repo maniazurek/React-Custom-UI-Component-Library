@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const showAnimation = keyframes`
+0% {opacity: 0.1}
+50% {opacity: 0.6}
+100% {opacity: 1}
+`;
 
 export const SwiperContainer = styled.div`
   display: flex;
@@ -23,11 +29,17 @@ export const SwiperItemMain = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-image: ${({ image }) => image && `url(${image})`};
+  animation-name: ${({ animated }) => (animated ? showAnimation : "unset")};
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 `;
 
 export const SwiperItems = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
   gap: 6px;
   width: 500px;
   height: 404px;

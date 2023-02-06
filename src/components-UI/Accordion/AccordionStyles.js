@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const showAnimation = keyframes`
+0% {opacity: 0.2}
+50% {opacity: 0.6}
+100% {opacity: 1}
+`;
 
 export const AccordionTitle = styled.div`
   font-size: 20px;
@@ -24,7 +30,11 @@ export const AccordionDescription = styled.div`
   border-radius: 4px;
   padding: 8px;
   width: 500px;
+  animation-name: ${({ animated }) => (animated ? showAnimation : "unset")};
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 `;
 
-export const AccordionContainer = styled.div`
-`
+export const AccordionContainer = styled.div``;

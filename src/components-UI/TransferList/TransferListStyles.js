@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const showAnimation = keyframes`
+0% {opacity: 0.1}
+50% {opacity: 0.6}
+100% {opacity: 1}
+`;
 
 export const TransferListContainer = styled.div`
   display: flex;
@@ -31,6 +37,11 @@ export const TransferListElement = styled.li`
   }
   background-color: ${({ clicked }) => clicked && "#8fb593"};
   color: ${({ clicked }) => (clicked ? "#fff" : "#585858")};
+  animation-name: ${({ animated }) => (animated ? showAnimation : "unset")};
+  animation-duration: 0.5s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 `;
 
 export const TransferItemContainer = styled.div`

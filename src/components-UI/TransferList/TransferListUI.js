@@ -65,6 +65,7 @@ const TransferListUI = () => {
       <TransferList>
         {defaultArray.map((data, index) => (
           <TransferListElement
+            animated={true}
             key={data.id}
             clicked={index === chosenDefault && "clicked"}
             onClick={() => setChosenDefault(index)}
@@ -112,6 +113,7 @@ const TransferListUI = () => {
       <TransferList>
         {selectedArray.map((data, index) => (
           <TransferListElement
+            animated={true}
             key={data.id}
             clicked={index === chosenSelected && "clicked"}
             onClick={() => setChosenSelected(index)}
