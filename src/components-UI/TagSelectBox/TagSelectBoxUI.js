@@ -30,8 +30,8 @@ const TagSelectBoxUI = () => {
   const onFormSubmit = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      const matchingTag = tagsSuggestionsData.find(
-        (tag) => tag.name.toLocaleLowerCase() === inputValue
+      const matchingTag = tagsSuggestionsData.find((tag) =>
+        tag.name.startsWith(inputValue)
       );
       const existingTag = tags.find((tag) => tag === matchingTag.id);
       if (matchingTag && !existingTag) {
