@@ -15,3 +15,8 @@ a:-webkit-any-link {
 .pointer-disabled {
   color: #808080;
 }
+
+.pointer-clear {
+  cursor: pointer;
+  color: #808080;
+}

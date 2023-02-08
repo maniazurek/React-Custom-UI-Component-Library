@@ -8,48 +8,43 @@ const transferListData = [
   },
   {
     id: uniqid(),
-    name: "Item 2",
+    name: "Item 12",
     disabled: false,
   },
   {
     id: uniqid(),
-    name: "Item 3",
+    name: "Item 123",
     disabled: false,
   },
   {
     id: uniqid(),
-    name: "Item 4",
+    name: "Item 1234",
     disabled: false,
   },
   {
     id: uniqid(),
-    name: "Item 5",
+    name: "Item 12345",
     disabled: true,
   },
   {
     id: uniqid(),
-    name: "Item 6",
+    name: "Item 123456",
     disabled: false,
   },
   {
     id: uniqid(),
-    name: "Item 7",
+    name: "Item 1234567",
     disabled: false,
   },
   {
     id: uniqid(),
-    name: "Item 8",
+    name: "Item 12345678",
     disabled: false,
   },
   {
     id: uniqid(),
-    name: "Item 9",
+    name: "Item 123456789",
     disabled: false,
-  },
-  {
-    id: uniqid(),
-    name: "Item 10",
-    disabled: true,
   },
 ];
 

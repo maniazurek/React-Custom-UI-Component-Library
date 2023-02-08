@@ -10,7 +10,7 @@ import {
   SwiperItem,
 } from "./SwiperStyles";
 
-const SwiperUI = () => {
+const SwiperUI = ({ mainPhotoPosition, itemsColumns, itemsRows }) => {
   const [swiperShowed, setSwiperShowed] = useState(0);
 
   const onSwiperChangeRight = () => {
@@ -36,8 +36,8 @@ const SwiperUI = () => {
   };
 
   return (
-    <SwiperContainer>
-      <SwiperMainContainer>
+    <SwiperContainer mainPhotoPosition={mainPhotoPosition}>
+      <SwiperMainContainer mainPhotoPosition={mainPhotoPosition}>
         <i
           className="fa-solid fa-angles-left fa-2xl"
           onClick={onSwipeToLeft}
@@ -58,9 +58,13 @@ const SwiperUI = () => {
           style={{ cursor: "pointer", color: "#8fb593" }}
         ></i>
       </SwiperMainContainer>
-      <SwiperItems>
+      <SwiperItems
+        mainPhotoPosition={mainPhotoPosition}
+        itemsColumns={itemsColumns}
+      >
         {swiperData.map((item, index) => (
           <SwiperItem
+            itemsColumns={itemsColumns}
             key={item.id}
             image={item.imageURL}
             selected={swiperShowed === index && "selected"}

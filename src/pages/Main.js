@@ -33,7 +33,21 @@ const Main = () => {
           }
         />
         <Route path="/selectbox" element={<SelectBox />} />
-        <Route path="/swiper" element={<Swiper />} />
+        <Route
+          path="/swiper"
+          element={
+            <Swiper
+              // mainPhotoPosition="right"
+              // mainPhotoPosition="left"
+              mainPhotoPosition="top"
+              // mainPhotoPosition="bottom"
+              // itemsColumns="1"
+              // itemsColumns="2"
+              // itemsColumns="3"
+              itemsColumns="4"
+            />
+          }
+        />
         <Route path="/switchbutton" element={<SwitchButton />} />
         <Route path="/tagselectbox" element={<TagSelectBox />} />
         <Route path="/transferlist" element={<TransferList />} />

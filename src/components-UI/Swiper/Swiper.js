@@ -6,7 +6,7 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import SwiperUI from "./SwiperUI";
 
-const Swiper = () => {
+const Swiper = ({ mainPhotoPosition, itemsColumns, itemsRows }) => {
   return (
     <SectionContainer>
       <SectionTitle>Swiper</SectionTitle>
@@ -21,7 +21,11 @@ const Swiper = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <SwiperUI />
+      <SwiperUI
+        mainPhotoPosition={mainPhotoPosition}
+        itemsColumns={itemsColumns}
+        itemsRows={itemsRows}
+      />
     </SectionContainer>
   );
 };

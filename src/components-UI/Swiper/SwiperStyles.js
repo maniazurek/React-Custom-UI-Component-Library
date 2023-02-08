@@ -9,13 +9,26 @@ const showAnimation = keyframes`
 export const SwiperContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
+  flex-direction: ${({ mainPhotoPosition }) =>
+    mainPhotoPosition === "top" ? "column" : "row"};
 `;
 
 export const SwiperMainContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  order: ${({ mainPhotoPosition }) =>
+    mainPhotoPosition === "right"
+      ? "2"
+      : mainPhotoPosition === "bottom"
+      ? "2"
+      : mainPhotoPosition === "left"
+      ? "0"
+      : mainPhotoPosition === "top"
+      ? "0"
+      : "0"};
 `;
 
 export const SwiperItemsMainContainer = styled.div``;
@@ -38,12 +51,21 @@ export const SwiperItemMain = styled.div`
 
 export const SwiperItems = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: ${({ itemsColumns }) =>
+    itemsColumns === "1"
+      ? "1fr"
+      : itemsColumns === "2"
+      ? "1fr 1fr"
+      : itemsColumns === "3"
+      ? "1fr 1fr 1fr"
+      : "1fr 1fr 1fr 1fr"};
   align-items: center;
   gap: 6px;
-  width: 500px;
+  // width: 500px;
   height: 404px;
   overflow: scroll;
+  order: ${({ mainPhotoPosition }) =>
+    mainPhotoPosition === "right" || "bottom" ? "0" : "2"};
 `;
 
 export const SwiperItem = styled.div`
