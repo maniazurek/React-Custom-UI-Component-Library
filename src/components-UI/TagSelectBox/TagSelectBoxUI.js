@@ -5,7 +5,6 @@ import {
   TagSelectContainer,
   SingleTag,
   TagToSelectContainer,
-  SelectedTagsContainer,
 } from "./TagSelectBoxStyles";
 
 const TagSelectBoxUI = () => {

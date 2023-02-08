@@ -16,14 +16,14 @@ const Main = () => {
   return (
     <>
       <Routes>
-        <Route path="/accordion" element={<Accordion show="single" />} />
+        <Route path="/accordion" element={<Accordion show="many" />} />
         <Route path="/button" element={<Button />} />
-        <Route path="/checkbox" element={<Checkbox select="single" />} />
+        <Route path="/checkbox" element={<Checkbox select="many" />} />
         <Route
           path="/rating"
           element={
             <Rating
-              stars="10"
+              stars="5"
               poor="poor"
               ok="ok"
               good="good"

@@ -81,6 +81,11 @@ const SelectBoxUI = () => {
             onClick={onOptionDelete}
           ></i>
         )}
+        {areOptionsOpen ? (
+          <i className="fa-solid fa-chevron-up fa-2xs"></i>
+        ) : (
+          <i className="fa-solid fa-chevron-down fa-2xs"></i>
+        )}
       </SelectContainer>
       {areOptionsOpen && (
         <SelectList>

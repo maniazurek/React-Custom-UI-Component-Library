@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import accordionData from "../../utils/accordionData";
 import {
   AccordionTitle,
   AccordionDescription,
   AccordionContainer,
 } from "../Accordion/AccordionStyles";
-import styled from "styled-components";
 
 const AccordionUI = ({ show }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [areOpen, setAreOpen] = useState([]);
-
-  // useEffect(() => {
-  //   window.addEventListener("click", () => setIsOpen(false));
-  // }, []);
 
   const onAccordionSingleToggle = (index) => {
     if (isOpen === index) {
@@ -100,7 +95,13 @@ const AccordionUI = ({ show }) => {
   );
 };
 
-// zmiene trzymane w stringach
-// tryb horyzontalny
 
 export default AccordionUI;
+
+// scroll na wysokość opisu
+
+
+
+
+// zmiene trzymane w stringach
+// tryb horyzontalny
