@@ -6,7 +6,15 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import RatingUI from "./RatingUI";
 
-const Rating = ({ stars, poor, ok, good, verygood, excellent }) => {
+const Rating = ({
+  scale,
+  scaleOne,
+  scaleTwo,
+  scaleThree,
+  scaleFour,
+  scaleFive,
+  mainColor
+}) => {
   return (
     <SectionContainer>
       <SectionTitle>Rating</SectionTitle>
@@ -22,12 +30,13 @@ const Rating = ({ stars, poor, ok, good, verygood, excellent }) => {
         of Lorem Ipsum.
       </SectionDescription>
       <RatingUI
-        stars={stars}
-        poor={poor}
-        ok={ok}
-        good={good}
-        verygood={verygood}
-        excellent={excellent}
+        scale={scale}
+        scaleOne={scaleOne}
+        scaleTwo={scaleTwo}
+        scaleThree={scaleThree}
+        scaleFour={scaleFour}
+        scaleFive={scaleFive}
+        mainColor={mainColor}
       />
     </SectionContainer>
   );

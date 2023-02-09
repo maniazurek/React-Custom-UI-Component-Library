@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 import uniqid from "uniqid";
 import { RatingContainer, RatingComment } from "./RatingStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
+const RatingUI = ({
+  scale,
+  scaleOne,
+  scaleTwo,
+  scaleThree,
+  scaleFour,
+  scaleFive,
+  mainColor
+}) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState(null);
 
@@ -13,22 +23,22 @@ const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
 
   useEffect(() => {
     const onAddRatingComment = () => {
-      if (rating === 0) {
+      if (scale === 0) {
         setComment(null);
-      } else if (rating <= stars / 5) {
-        setComment(poor);
-      } else if (rating <= stars / 2.5) {
-        setComment(ok);
-      } else if (rating <= stars / 1.6) {
-        setComment(good);
-      } else if (rating <= stars / 1.25) {
-        setComment(verygood);
-      } else if (rating === stars / 1) {
-        setComment(excellent);
+      } else if (rating <= scale / 5) {
+        setComment(scaleOne);
+      } else if (rating <= scale / 2.5) {
+        setComment(scaleTwo);
+      } else if (rating <= scale / 1.6) {
+        setComment(scaleThree);
+      } else if (rating <= scale / 1.25) {
+        setComment(scaleFour);
+      } else if (rating === scale / 1) {
+        setComment(scaleFive);
       }
     };
     onAddRatingComment();
-  }, [rating, stars]);
+  }, [rating, scale]);
 
   const onAddRating = (event, index) => {
     setRating(index + 1);
@@ -38,21 +48,21 @@ const RatingUI = ({ stars, poor, ok, good, verygood, excellent }) => {
   return (
     <>
       <RatingContainer>
-        {Array(Number(stars))
+        {Array(Number(scale))
           .fill()
           .map((_, index) =>
             index + 1 <= rating ? (
-              <i
+              <FontAwesomeIcon
+                icon={faStar}
                 key={uniqid()}
-                className="fa-solid fa-star"
-                style={{ color: "#ffd700" }}
+                style={{ color: mainColor }}
                 onClick={(event) => onAddRating(event, index)}
-              ></i>
+              />
             ) : (
               <i
                 key={uniqid()}
                 className="fa-regular fa-star"
-                style={{ color: "#ffd700" }}
+                style={{ color: mainColor }}
                 onClick={(event) => onAddRating(event, index)}
               ></i>
             )

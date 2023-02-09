@@ -6,7 +6,7 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import AccordionUI from "./AccordionUI";
 
-const Accordion = ({ show }) => {
+const Accordion = ({ show, showContent, mainColor, disabledColor, contentColor }) => {
   return (
     <SectionContainer>
       <SectionTitle>Accordion</SectionTitle>
@@ -21,7 +21,13 @@ const Accordion = ({ show }) => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <AccordionUI show={show} />
+      <AccordionUI
+        show={show}
+        showContent={showContent}
+        mainColor={mainColor}
+        disabledColor={disabledColor}
+        contentColor={contentColor}
+      />
     </SectionContainer>
   );
 };

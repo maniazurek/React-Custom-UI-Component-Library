@@ -16,16 +16,27 @@ const Main = () => {
   return (
     <>
       <Routes>
-        <Route path="/accordion" element={<Accordion show="many" />} />
+        <Route
+          path="/accordion"
+          element={
+            <Accordion
+              // show="many"
+              show="single"
+              showContent="limited"
+              // showContent="unlimited"
+              mainColor="#8fb593"
+              disabledColor="#d8d8d8"
+              contentColor="#fff"
+            />
+          }
+        />
         <Route path="/button" element={<Button />} />
         <Route
           path="/checkbox"
           element={
             <Checkbox
-              type="checkbox"
-              // type="radio"
-              // select="many"
-              select="single"
+              // type="checkbox"
+              type="radio"
               mainColor="#8fb593"
             />
           }
@@ -34,12 +45,13 @@ const Main = () => {
           path="/rating"
           element={
             <Rating
-              stars="5"
-              poor="poor"
-              ok="ok"
-              good="good"
-              verygood="very good"
-              excellent="excellent"
+              scale="5"
+              scaleOne="poor"
+              scaleTwo="ok"
+              scaleThree="good"
+              scaleFour="very good"
+              scaleFive="excellent"
+              mainColor="#ffd700"
             />
           }
         />

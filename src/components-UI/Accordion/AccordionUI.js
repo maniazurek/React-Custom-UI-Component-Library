@@ -6,7 +6,13 @@ import {
   AccordionContainer,
 } from "../Accordion/AccordionStyles";
 
-const AccordionUI = ({ show }) => {
+const AccordionUI = ({
+  show,
+  showContent,
+  mainColor,
+  disabledColor,
+  contentColor,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [areOpen, setAreOpen] = useState([]);
 
@@ -53,7 +59,11 @@ const AccordionUI = ({ show }) => {
     if (show === "many") {
       if (areOpen.includes(index)) {
         return (
-          <AccordionDescription animated={true}>
+          <AccordionDescription
+            animated={true}
+            contentColor={contentColor}
+            showContent={showContent}
+          >
             {accordion.description}
           </AccordionDescription>
         );
@@ -63,7 +73,11 @@ const AccordionUI = ({ show }) => {
     } else if (show === "single") {
       if (isOpen === index) {
         return (
-          <AccordionDescription animated={true}>
+          <AccordionDescription
+            animated={true}
+            contentColor={contentColor}
+            showContent={showContent}
+          >
             {accordion.description}
           </AccordionDescription>
         );
@@ -81,12 +95,22 @@ const AccordionUI = ({ show }) => {
             <AccordionTitle
               disabled={false}
               onClick={() => onAccordionToggle(index)}
+              mainColor={mainColor}
+              disabledColor={disabledColor}
+              contentColor={contentColor}
             >
               <AccordionContainer>{accordion.title}</AccordionContainer>
               <AccordionContainer className={determineOpenIcon(index)} />
             </AccordionTitle>
           ) : (
-            <AccordionTitle disabled={true}>{accordion.title}</AccordionTitle>
+            <AccordionTitle
+              disabled={true}
+              mainColor={mainColor}
+              disabledColor={disabledColor}
+              contentColor={contentColor}
+            >
+              {accordion.title}
+            </AccordionTitle>
           )}
           {determineOpen(index, accordion)}
         </AccordionContainer>
@@ -95,13 +119,9 @@ const AccordionUI = ({ show }) => {
   );
 };
 
-
 export default AccordionUI;
 
 // scroll na wysokość opisu
-
-
-
 
 // zmiene trzymane w stringach
 // tryb horyzontalny

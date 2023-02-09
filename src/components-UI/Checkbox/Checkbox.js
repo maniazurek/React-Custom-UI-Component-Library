@@ -6,7 +6,7 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import CheckboxUI from "./CheckboxUI";
 
-const Chceckbox = ({ select, type, mainColor }) => {
+const Chceckbox = ({ type, mainColor }) => {
   return (
     <SectionContainer>
       <SectionTitle>Checkbox</SectionTitle>
@@ -21,7 +21,7 @@ const Chceckbox = ({ select, type, mainColor }) => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <CheckboxUI select={select} type={type} mainColor={mainColor} />
+      <CheckboxUI type={type} mainColor={mainColor} />
     </SectionContainer>
   );
 };

@@ -11,8 +11,8 @@ import checkboxData from "../../utils/checkboxData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const ChceckboxUI = ({ select, type, mainColor }) => {
-  const [isSelected, setIsSelected] = useState(false);
+const ChceckboxUI = ({ type, mainColor }) => {
+  const [isSelected, setIsSelected] = useState(0);
   const [areSelected, setAreSelected] = useState([]);
 
   const onSelectSingleToggle = (index) => {
@@ -31,37 +31,21 @@ const ChceckboxUI = ({ select, type, mainColor }) => {
   };
 
   const onSelectToggle = (index) => {
-    if (select === "single" && type === "radio") {
+    if (type === "radio") {
       onSelectSingleToggle(index);
-    } else if (select === "single" && type === "checkbox") {
-      onSelectManyToggle(index);
-    } else if (select === "many" && type === "radio") {
-      onSelectSingleToggle(index);
-    } else if (select === "many" && type === "checkbox") {
+    } else if (type === "checkbox") {
       onSelectManyToggle(index);
     }
   };
 
   const determineSelect = (index) => {
-    if (select === "single" && type === "radio") {
+    if (type === "radio") {
       if (isSelected === index) {
         return true;
       } else {
         return false;
       }
-    } else if (select === "single" && type === "checkbox") {
-      if (areSelected.includes(index)) {
-        return true;
-      } else {
-        return false;
-      }
-    } else if (select === "many" && type === "radio") {
-      if (isSelected === index) {
-        return true;
-      } else {
-        return false;
-      }
-    } else if (select === "many" && type === "checkbox") {
+    } else if (type === "checkbox") {
       if (areSelected.includes(index)) {
         return true;
       } else {
@@ -87,7 +71,10 @@ const ChceckboxUI = ({ select, type, mainColor }) => {
                   mainColor={mainColor}
                 />
                 <IconContainer mode={determineSelect(index)} type={type}>
-                  <FontAwesomeIcon icon={faCheck} style={{fontSize: "11px", color: "fff"}}/>
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    style={{ fontSize: "11px", color: "fff" }}
+                  />
                 </IconContainer>
               </CheckboxSelectContainer>
               <CheckboxData>{data.name}</CheckboxData>
