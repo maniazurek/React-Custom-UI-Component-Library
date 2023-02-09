@@ -1,8 +1,12 @@
 import React from "react";
-import { SectionContainer, SectionDescription, SectionTitle } from "../../components-website/ComponentsWebStyles";
+import {
+  SectionContainer,
+  SectionDescription,
+  SectionTitle,
+} from "../../components-website/ComponentsWebStyles";
 import CheckboxUI from "./CheckboxUI";
 
-const Chceckbox = ({ select }) => {
+const Chceckbox = ({ select, type, mainColor }) => {
   return (
     <SectionContainer>
       <SectionTitle>Checkbox</SectionTitle>
@@ -17,7 +21,7 @@ const Chceckbox = ({ select }) => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <CheckboxUI select={select} />
+      <CheckboxUI select={select} type={type} mainColor={mainColor} />
     </SectionContainer>
   );
 };

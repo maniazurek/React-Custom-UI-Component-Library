@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import tagsSuggestionsData from "../../utils/tagsSuggestionsData";
 import { SelectInput, SelectContainer } from "../SelectBox/SelectBoxStyles";
 import {
@@ -14,9 +14,19 @@ const TagSelectBoxUI = () => {
     useState(tagsSuggestionsData);
   const [tags, setTags] = useState([]);
 
+  const inputRef = useRef < HTMLInputElement > null;
+
+  useEffect(() => {
+    inputRef.current?.scrollIntoView({ inline: "end" });
+  }, [tags]);
+
   useEffect(() => {
     window.addEventListener("click", () => setIsSuggestionsOpen(false));
   }, []);
+
+  const inputFocus = () => {
+    inputRef.current?.focus();
+  };
 
   const onTagAdd = (tagToAdd) => {
     setTags([...tags, tagToAdd]);
@@ -49,6 +59,7 @@ const TagSelectBoxUI = () => {
       internalTagsSuggestions.filter((tag) => tag.id !== tagToAddID)
     );
     setInputValue("");
+    inputFocus();
   };
 
   const handleTagRemove = (tagToRemoveID) => {
@@ -57,6 +68,7 @@ const TagSelectBoxUI = () => {
       (tag) => tag.id === tagToRemoveID
     );
     setInternalTagsSuggestions([...internalTagsSuggestions, removedTag]);
+    inputFocus();
   };
 
   return (
@@ -85,6 +97,7 @@ const TagSelectBoxUI = () => {
           );
         })}
         <SelectInput
+          ref={inputRef}
           placeholder="Type tag..."
           onKeyPress={onFormSubmit}
           value={inputValue}

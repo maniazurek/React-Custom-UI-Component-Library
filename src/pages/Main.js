@@ -18,7 +18,18 @@ const Main = () => {
       <Routes>
         <Route path="/accordion" element={<Accordion show="many" />} />
         <Route path="/button" element={<Button />} />
-        <Route path="/checkbox" element={<Checkbox select="many" />} />
+        <Route
+          path="/checkbox"
+          element={
+            <Checkbox
+              type="checkbox"
+              // type="radio"
+              // select="many"
+              select="single"
+              mainColor="#8fb593"
+            />
+          }
+        />
         <Route
           path="/rating"
           element={
@@ -37,14 +48,18 @@ const Main = () => {
           path="/swiper"
           element={
             <Swiper
-              // mainPhotoPosition="right"
+              mainPhotoPosition="right"
               // mainPhotoPosition="left"
-              mainPhotoPosition="top"
+              // mainPhotoPosition="top"
               // mainPhotoPosition="bottom"
+              // templateSize="small"
+              templateSize="medium"
+              // templateSize="large"
               // itemsColumns="1"
               // itemsColumns="2"
-              // itemsColumns="3"
-              itemsColumns="4"
+              itemsColumns="3"
+              // itemsColumns="4"
+              mainColor="#8fb593"
             />
           }
         />

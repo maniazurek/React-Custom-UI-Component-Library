@@ -12,23 +12,23 @@ export const SwiperContainer = styled.div`
   justify-content: center;
   gap: 7px;
   flex-direction: ${({ mainPhotoPosition }) =>
-    mainPhotoPosition === "top" ? "column" : "row"};
+    mainPhotoPosition === "left" && "row"};
+  flex-direction: ${({ mainPhotoPosition }) =>
+    mainPhotoPosition === "right" && "row"};
+  flex-direction: ${({ mainPhotoPosition }) =>
+    mainPhotoPosition === "top" && "column"};
+  flex-direction: ${({ mainPhotoPosition }) =>
+    mainPhotoPosition === "bottom" && "column"};
 `;
 
 export const SwiperMainContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  order: ${({ mainPhotoPosition }) =>
-    mainPhotoPosition === "right"
-      ? "2"
-      : mainPhotoPosition === "bottom"
-      ? "2"
-      : mainPhotoPosition === "left"
-      ? "0"
-      : mainPhotoPosition === "top"
-      ? "0"
-      : "0"};
+  order: ${({ mainPhotoPosition }) => mainPhotoPosition === "right" && "2"};
+  order: ${({ mainPhotoPosition }) => mainPhotoPosition === "bottom" && "2"};
+  order: ${({ mainPhotoPosition }) => mainPhotoPosition === "left" && "0"};
+  order: ${({ mainPhotoPosition }) => mainPhotoPosition === "top" && "0"};
 `;
 
 export const SwiperItemsMainContainer = styled.div``;
@@ -36,8 +36,12 @@ export const SwiperItemsMainContainer = styled.div``;
 export const SwiperItemMainContainer = styled.div``;
 
 export const SwiperItemMain = styled.div`
-  width: 500px;
-  height: 400px;
+  width: ${({ templateSize }) => templateSize === "large" && "500px"};
+  width: ${({ templateSize }) => templateSize === "medium" && "350px"};
+  width: ${({ templateSize }) => templateSize === "small" && "200px"};
+  height: ${({ templateSize }) => templateSize === "large" && "400px"};
+  height: ${({ templateSize }) => templateSize === "medium" && "280px"};
+  height: ${({ templateSize }) => templateSize === "small" && "160px"};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -52,31 +56,35 @@ export const SwiperItemMain = styled.div`
 export const SwiperItems = styled.div`
   display: grid;
   grid-template-columns: ${({ itemsColumns }) =>
-    itemsColumns === "1"
-      ? "1fr"
-      : itemsColumns === "2"
-      ? "1fr 1fr"
-      : itemsColumns === "3"
-      ? "1fr 1fr 1fr"
-      : "1fr 1fr 1fr 1fr"};
+    itemsColumns === "4" && "1fr 1fr 1fr 1fr"};
+  grid-template-columns: ${({ itemsColumns }) => itemsColumns === "1" && "1fr"};
+  grid-template-columns: ${({ itemsColumns }) =>
+    itemsColumns === "2" && "1fr 1fr"};
+  grid-template-columns: ${({ itemsColumns }) =>
+    itemsColumns === "3" && "1fr 1fr 1fr"};
   align-items: center;
   gap: 6px;
-  // width: 500px;
-  height: 404px;
+  height: ${({ templateSize }) => templateSize === "large" && "404px"};
+  height: ${({ templateSize }) => templateSize === "medium" && "280px"};
+  height: ${({ templateSize }) => templateSize === "small" && "160px"};
   overflow: scroll;
-  order: ${({ mainPhotoPosition }) =>
-    mainPhotoPosition === "right" || "bottom" ? "0" : "2"};
 `;
 
 export const SwiperItem = styled.div`
   cursor: pointer;
-  width: 112px;
-  height: 112px;
+  width: ${({ templateSize }) => templateSize === "large" && "112px"};
+  width: ${({ templateSize }) => templateSize === "medium" && "78.4px"};
+  width: ${({ templateSize }) => templateSize === "small" && "44.8px"};
+  height: ${({ templateSize }) => templateSize === "large" && "112px"};
+  height: ${({ templateSize }) => templateSize === "medium" && "78.4px"};
+  height: ${({ templateSize }) => templateSize === "small" && "44.8px"};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 5px;
   background-image: ${({ image }) => image && `url(${image})`};
   border: ${({ selected }) =>
-    selected === "selected" ? "4px solid #8fb593" : "4px solid #fff"};
+    selected === "selected" ? "4px solid" : "4px solid"};
+  border-color: ${({ selected, mainColor }) =>
+    selected === "selected" ? mainColor : "#fff"};
 `;

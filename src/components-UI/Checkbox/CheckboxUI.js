@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import {
   CheckboxContainer,
   CheckboxItem,
+  CheckboxSelectContainer,
   CheckboxSelect,
   CheckboxData,
+  IconContainer,
 } from "../Checkbox/CheckboxStyles";
 import checkboxData from "../../utils/checkboxData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const ChceckboxUI = ({ select }) => {
+const ChceckboxUI = ({ select, type, mainColor }) => {
   const [isSelected, setIsSelected] = useState(false);
   const [areSelected, setAreSelected] = useState([]);
 
@@ -27,21 +31,37 @@ const ChceckboxUI = ({ select }) => {
   };
 
   const onSelectToggle = (index) => {
-    if (select === "single") {
+    if (select === "single" && type === "radio") {
       onSelectSingleToggle(index);
-    } else if (select === "many") {
+    } else if (select === "single" && type === "checkbox") {
+      onSelectManyToggle(index);
+    } else if (select === "many" && type === "radio") {
+      onSelectSingleToggle(index);
+    } else if (select === "many" && type === "checkbox") {
       onSelectManyToggle(index);
     }
   };
 
   const determineSelect = (index) => {
-    if (select === "single") {
+    if (select === "single" && type === "radio") {
       if (isSelected === index) {
         return true;
       } else {
         return false;
       }
-    } else if (select === "many") {
+    } else if (select === "single" && type === "checkbox") {
+      if (areSelected.includes(index)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (select === "many" && type === "radio") {
+      if (isSelected === index) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (select === "many" && type === "checkbox") {
       if (areSelected.includes(index)) {
         return true;
       } else {
@@ -56,12 +76,31 @@ const ChceckboxUI = ({ select }) => {
         <CheckboxContainer key={data.id}>
           {!data.disabled ? (
             <CheckboxItem onClick={() => onSelectToggle(index)}>
-              <CheckboxSelect mode={determineSelect(index)} />
+              <CheckboxSelectContainer
+                mode={determineSelect(index)}
+                type={type}
+                mainColor={mainColor}
+              >
+                <CheckboxSelect
+                  mode={determineSelect(index)}
+                  type={type}
+                  mainColor={mainColor}
+                />
+                <IconContainer mode={determineSelect(index)} type={type}>
+                  <FontAwesomeIcon icon={faCheck} style={{fontSize: "11px", color: "fff"}}/>
+                </IconContainer>
+              </CheckboxSelectContainer>
               <CheckboxData>{data.name}</CheckboxData>
             </CheckboxItem>
           ) : (
             <CheckboxItem disabled={true}>
-              <CheckboxSelect />
+              <CheckboxSelectContainer
+                mode={determineSelect(index)}
+                type={type}
+                mainColor={mainColor}
+              >
+                <CheckboxSelect type={type} />
+              </CheckboxSelectContainer>
               <CheckboxData>{data.name}</CheckboxData>
             </CheckboxItem>
           )}

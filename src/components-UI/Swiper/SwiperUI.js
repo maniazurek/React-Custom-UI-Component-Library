@@ -9,8 +9,16 @@ import {
   SwiperItems,
   SwiperItem,
 } from "./SwiperStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 
-const SwiperUI = ({ mainPhotoPosition, itemsColumns, itemsRows }) => {
+const SwiperUI = ({
+  mainPhotoPosition,
+  itemsColumns,
+  itemsRows,
+  mainColor,
+  templateSize,
+}) => {
   const [swiperShowed, setSwiperShowed] = useState(0);
 
   const onSwiperChangeRight = () => {
@@ -38,37 +46,65 @@ const SwiperUI = ({ mainPhotoPosition, itemsColumns, itemsRows }) => {
   return (
     <SwiperContainer mainPhotoPosition={mainPhotoPosition}>
       <SwiperMainContainer mainPhotoPosition={mainPhotoPosition}>
-        <i
-          className="fa-solid fa-angles-left fa-2xl"
+        <FontAwesomeIcon
+          icon={faAnglesLeft}
+          style={{
+            cursor: "pointer",
+            color: mainColor,
+            fontSize:
+              templateSize === "large"
+                ? "35px"
+                : "medium"
+                ? "25px"
+                : "small"
+                ? "10px"
+                : "20px",
+          }}
           onClick={onSwipeToLeft}
-          style={{ cursor: "pointer", color: "#8fb593" }}
-        ></i>
+        />
         <SwiperItemsMainContainer>
           {swiperData.map((item, index) => (
             <SwiperItemMainContainer key={item.id}>
               {swiperShowed === index && (
-                <SwiperItemMain animated={true} image={item.imageURL} />
+                <SwiperItemMain
+                  animated={true}
+                  image={item.imageURL}
+                  templateSize={templateSize}
+                />
               )}
             </SwiperItemMainContainer>
           ))}
         </SwiperItemsMainContainer>
-        <i
-          className="fa-solid fa-angles-right fa-2xl"
+        <FontAwesomeIcon
+          icon={faAnglesRight}
           onClick={onSwipeToRight}
-          style={{ cursor: "pointer", color: "#8fb593" }}
-        ></i>
+          style={{
+            cursor: "pointer",
+            color: mainColor,
+            fontSize:
+              templateSize === "large"
+                ? "35px"
+                : "medium"
+                ? "25px"
+                : "small"
+                ? "10px"
+                : "20px",
+          }}
+        />
       </SwiperMainContainer>
       <SwiperItems
         mainPhotoPosition={mainPhotoPosition}
         itemsColumns={itemsColumns}
+        templateSize={templateSize}
       >
         {swiperData.map((item, index) => (
           <SwiperItem
-            itemsColumns={itemsColumns}
             key={item.id}
             image={item.imageURL}
             selected={swiperShowed === index && "selected"}
             onClick={() => setSwiperShowed(index)}
+            mainColor={mainColor}
+            templateSize={templateSize}
           ></SwiperItem>
         ))}
       </SwiperItems>

@@ -6,7 +6,13 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import SwiperUI from "./SwiperUI";
 
-const Swiper = ({ mainPhotoPosition, itemsColumns, itemsRows }) => {
+const Swiper = ({
+  mainPhotoPosition,
+  itemsColumns,
+  itemsRows,
+  mainColor,
+  templateSize,
+}) => {
   return (
     <SectionContainer>
       <SectionTitle>Swiper</SectionTitle>
@@ -25,6 +31,8 @@ const Swiper = ({ mainPhotoPosition, itemsColumns, itemsRows }) => {
         mainPhotoPosition={mainPhotoPosition}
         itemsColumns={itemsColumns}
         itemsRows={itemsRows}
+        mainColor={mainColor}
+        templateSize={templateSize}
       />
     </SectionContainer>
   );
