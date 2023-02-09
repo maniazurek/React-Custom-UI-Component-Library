@@ -7,7 +7,7 @@ import {
 } from "./SelectBoxStyles";
 import selectBoxData from "../../utils/selectboxData";
 
-const SelectBoxUI = () => {
+const SelectBoxUI = ({ mainColor, boxHeight }) => {
   const [selectedOption, setSelectedOption] = useState({ name: "", id: "" });
   const [selectedOptionDraft, setSelectedOptionDraft] = useState({
     name: "",
@@ -62,7 +62,7 @@ const SelectBoxUI = () => {
 
   return (
     <>
-      <SelectContainer>
+      <SelectContainer mainColor={mainColor}>
         <SelectInput
           value={selectedOptionDraft.name}
           placeholder="Select from the list..."
@@ -88,7 +88,7 @@ const SelectBoxUI = () => {
         )}
       </SelectContainer>
       {areOptionsOpen && (
-        <SelectList>
+        <SelectList mainColor={mainColor} boxHeight={boxHeight}>
           {selectBoxData
             .filter((option) =>
               option.name
@@ -99,6 +99,7 @@ const SelectBoxUI = () => {
               <SelectListElement
                 key={option.id}
                 onClick={() => onOptionSelect(option)}
+                mainColor={mainColor}
               >
                 {option.name}
               </SelectListElement>

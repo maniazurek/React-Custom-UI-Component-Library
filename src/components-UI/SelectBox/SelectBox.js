@@ -1,8 +1,12 @@
 import React from "react";
-import { SectionContainer, SectionDescription, SectionTitle } from "../../components-website/ComponentsWebStyles";
+import {
+  SectionContainer,
+  SectionDescription,
+  SectionTitle,
+} from "../../components-website/ComponentsWebStyles";
 import SelectBoxUI from "./SelectBoxUI";
 
-const SelectBox = () => {
+const SelectBox = ({ mainColor, boxHeight }) => {
   return (
     <SectionContainer>
       <SectionTitle>Select Box</SectionTitle>
@@ -17,7 +21,7 @@ const SelectBox = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <SelectBoxUI />
+      <SelectBoxUI mainColor={mainColor} boxHeight={boxHeight} />
     </SectionContainer>
   );
 };

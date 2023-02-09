@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Accordion from "../components-UI/Accordion/Accordion";
 import Button from "../components-UI/Button/Button";
@@ -55,7 +55,17 @@ const Main = () => {
             />
           }
         />
-        <Route path="/selectbox" element={<SelectBox />} />
+        <Route
+          path="/selectbox"
+          element={
+            <SelectBox
+              mainColor="#8fb593"
+              boxHeight="limited"
+              // boxHeight="unlimited"
+            />
+          }
+          boxHeight="unlimited"
+        />
         <Route
           path="/swiper"
           element={
