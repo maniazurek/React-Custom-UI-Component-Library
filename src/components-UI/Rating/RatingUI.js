@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import uniqid from "uniqid";
 import { RatingContainer, RatingComment } from "./RatingStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const RatingUI = ({
   scale,
@@ -11,7 +11,7 @@ const RatingUI = ({
   scaleThree,
   scaleFour,
   scaleFive,
-  mainColor
+  mainColor,
 }) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState(null);
@@ -53,18 +53,16 @@ const RatingUI = ({
           .map((_, index) =>
             index + 1 <= rating ? (
               <FontAwesomeIcon
-                icon={faStar}
-                key={uniqid()}
-                style={{ color: mainColor }}
+                icon={icon({ name: "star", style: "solid" })}
                 onClick={(event) => onAddRating(event, index)}
+                style={{ color: mainColor }}
               />
             ) : (
-              <i
-                key={uniqid()}
-                className="fa-regular fa-star"
-                style={{ color: mainColor }}
+              <FontAwesomeIcon
+                icon={icon({ name: "star", style: "regular" })}
                 onClick={(event) => onAddRating(event, index)}
-              ></i>
+                style={{ color: mainColor }}
+              />
             )
           )}
       </RatingContainer>
