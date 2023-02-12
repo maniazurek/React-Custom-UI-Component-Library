@@ -6,6 +6,8 @@ import {
   SelectListElement,
 } from "./SelectBoxStyles";
 import selectBoxData from "../../utils/selectboxData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const SelectBoxUI = ({ mainColor, boxHeight }) => {
   const [selectedOption, setSelectedOption] = useState({ name: "", id: "" });
@@ -71,20 +73,22 @@ const SelectBoxUI = ({ mainColor, boxHeight }) => {
           onClick={onOptionsOpen}
         />
         {selectedOption.name && (
-          <i
-            className="fa-solid fa-x"
-            style={{
-              cursor: "pointer",
-              color: "#585858",
-              fontSize: "10px",
-            }}
+          <FontAwesomeIcon
+            icon={icon({ name: "x", style: "solid" })}
+            style={{ cursor: "pointer", fontSize: "10px" }}
             onClick={onOptionDelete}
-          ></i>
+          />
         )}
         {areOptionsOpen ? (
-          <i className="fa-solid fa-chevron-up fa-2xs"></i>
+          <FontAwesomeIcon
+            icon={icon({ name: "chevron-up", style: "solid" })}
+            style={{ fontSize: "10px" }}
+          />
         ) : (
-          <i className="fa-solid fa-chevron-down fa-2xs"></i>
+          <FontAwesomeIcon
+            icon={icon({ name: "chevron-down", style: "solid" })}
+            style={{ fontSize: "10px" }}
+          />
         )}
       </SelectContainer>
       {areOptionsOpen && (

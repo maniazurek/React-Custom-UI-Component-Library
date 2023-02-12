@@ -6,6 +6,8 @@ import {
   SingleTag,
   TagToSelectContainer,
 } from "./TagSelectBoxStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const TagSelectBoxUI = ({ mainColor }) => {
   const [inputValue, setInputValue] = useState("");
@@ -84,15 +86,11 @@ const TagSelectBoxUI = ({ mainColor }) => {
               key={tagID}
             >
               {currentTag.name}
-              <i
-                className="fa-solid fa-x"
-                style={{
-                  cursor: "pointer",
-                  color: "#000",
-                  fontSize: "12px",
-                }}
+              <FontAwesomeIcon
+                icon={icon({ name: "x", style: "solid" })}
+                style={{ cursor: "pointer", fontSize: "10px" }}
                 onClick={() => handleTagRemove(tagID)}
-              ></i>
+              />
             </SingleTag>
           );
         })}
