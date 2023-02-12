@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import uniqid from "uniqid";
 import { RatingContainer, RatingComment } from "./RatingStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";

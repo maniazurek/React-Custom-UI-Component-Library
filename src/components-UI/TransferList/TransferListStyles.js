@@ -18,7 +18,8 @@ export const TransferList = styled.ul`
   margin-top: 5px;
   margin-bottom: 0px;
   list-style: none;
-  border: 1px solid #8fb593;
+  border: 1px solid;
+  border-color: ${({ mainColor }) => mainColor};
   border-radius: 11px;
   width: 200px;
   height: 300px;
@@ -31,11 +32,11 @@ export const TransferListElement = styled.li`
   padding: 4px;
   border-radius: 11px;
   &:hover {
-    background-color: #8fb593;
+    background-color: ${({ mainColor }) => mainColor};
     border-radius: 11px;
     color: #fff;
   }
-  background-color: ${({ clicked }) => clicked && "#8fb593"};
+  background-color: ${({ clicked, mainColor }) => clicked && mainColor};
   color: ${({ clicked }) => (clicked ? "#fff" : "#585858")};
   animation-name: ${({ animated }) => (animated ? showAnimation : "unset")};
   animation-duration: 0.5s;

@@ -2,7 +2,7 @@ import React from "react";
 import { SectionContainer, SectionDescription, SectionTitle } from "../../components-website/ComponentsWebStyles";
 import TransferListUI from "./TransferListUI";
 
-const TransferList = () => {
+const TransferList = ({mainColor, disabledColor}) => {
   return (
     <SectionContainer>
       <SectionTitle>Transfer List</SectionTitle>
@@ -17,7 +17,7 @@ const TransferList = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <TransferListUI />
+      <TransferListUI mainColor={mainColor} disabledColor={disabledColor}/>
     </SectionContainer>
   );
 };

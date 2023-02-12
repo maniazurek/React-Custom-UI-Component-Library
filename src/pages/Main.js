@@ -90,7 +90,10 @@ const Main = () => {
           path="/tagselectbox"
           element={<TagSelectBox mainColor="#8fb593" />}
         />
-        <Route path="/transferlist" element={<TransferList />} />
+        <Route
+          path="/transferlist"
+          element={<TransferList mainColor="#8fb593" disabledColor="#808080" />}
+        />
       </Routes>
       <Outlet />
       <Navigation />
