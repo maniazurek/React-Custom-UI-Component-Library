@@ -7,7 +7,7 @@ export const TagSelectContainer = styled.div`
 
 export const SingleTag = styled.span`
   border-radius: 6px;
-  padding: 6px 8px;
+  padding: 4px 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,8 @@ export const TagToSelectContainer = styled.div`
   width: 250px;
   height: fit-content;
   overflow-x: auto;
-  border: 1px solid #8fb593;
+  border: 1px solid;
+  border-color: ${({ mainColor }) => mainColor};
   border-radius: 11px;
   border-top: none;
   padding: 7px 10px 7px 7px;

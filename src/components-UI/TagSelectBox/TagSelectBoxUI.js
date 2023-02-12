@@ -7,7 +7,7 @@ import {
   TagToSelectContainer,
 } from "./TagSelectBoxStyles";
 
-const TagSelectBoxUI = () => {
+const TagSelectBoxUI = ({ mainColor }) => {
   const [inputValue, setInputValue] = useState("");
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
   const [internalTagsSuggestions, setInternalTagsSuggestions] =
@@ -73,7 +73,7 @@ const TagSelectBoxUI = () => {
 
   return (
     <TagSelectContainer>
-      <SelectContainer>
+      <SelectContainer mainColor={mainColor}>
         {tags.map((tagID) => {
           const currentTag = tagsSuggestionsData.find(
             (tagToShow) => tagToShow.id === tagID
@@ -83,6 +83,7 @@ const TagSelectBoxUI = () => {
               style={{ backgroundColor: currentTag.color }}
               key={tagID}
             >
+              {currentTag.name}
               <i
                 className="fa-solid fa-x"
                 style={{
@@ -92,7 +93,6 @@ const TagSelectBoxUI = () => {
                 }}
                 onClick={() => handleTagRemove(tagID)}
               ></i>
-              {currentTag.name}
             </SingleTag>
           );
         })}
@@ -109,7 +109,7 @@ const TagSelectBoxUI = () => {
         />
       </SelectContainer>
       {isSuggestionsOpen && (
-        <TagToSelectContainer>
+        <TagToSelectContainer mainColor={mainColor}>
           {isSuggestionsOpen &&
             internalTagsSuggestions
               .filter((tag) =>

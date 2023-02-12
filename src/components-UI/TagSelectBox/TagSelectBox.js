@@ -6,7 +6,7 @@ import {
 } from "../../components-website/ComponentsWebStyles";
 import TagSelectBoxUI from "./TagSelectBoxUI";
 
-const TagSelectBox = () => {
+const TagSelectBox = ({ mainColor }) => {
   return (
     <SectionContainer>
       <SectionTitle>Tag Select Box</SectionTitle>
@@ -21,7 +21,7 @@ const TagSelectBox = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </SectionDescription>
-      <TagSelectBoxUI />
+      <TagSelectBoxUI mainColor={mainColor} />
     </SectionContainer>
   );
 };

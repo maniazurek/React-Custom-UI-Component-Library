@@ -20,44 +20,26 @@ const SwiperUI = ({
 }) => {
   const [swiperShowed, setSwiperShowed] = useState(0);
 
-  const swiperRef = useRef(null);
-
-  useEffect(() => {
-    swiperRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "start",
-    });
-  }, [swiperShowed]);
-
-  const swiperFocus = () => {
-    swiperRef.current?.focus();
-  };
-
   const onSwiperChangeRight = () => {
     if (swiperShowed >= swiperData.length - 1) {
       setSwiperShowed(0);
     }
-    swiperFocus();
   };
 
   const onSwipeToRight = () => {
     setSwiperShowed(swiperShowed + 1);
     onSwiperChangeRight();
-    swiperFocus();
   };
 
   const onSwiperChangeLeft = () => {
     if (swiperShowed === 0) {
       setSwiperShowed(swiperData.length - 1);
     }
-    swiperFocus();
   };
 
   const onSwipeToLeft = () => {
     setSwiperShowed(swiperShowed - 1);
     onSwiperChangeLeft();
-    swiperFocus();
   };
 
   return (
@@ -116,7 +98,6 @@ const SwiperUI = ({
       >
         {swiperData.map((item, index) => (
           <SwiperItem
-            ref={swiperRef}
             key={item.id}
             image={item.imageURL}
             selected={swiperShowed === index && "selected"}

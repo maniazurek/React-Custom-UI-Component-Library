@@ -86,7 +86,10 @@ const Main = () => {
           }
         />
         <Route path="/switchbutton" element={<SwitchButton />} />
-        <Route path="/tagselectbox" element={<TagSelectBox />} />
+        <Route
+          path="/tagselectbox"
+          element={<TagSelectBox mainColor="#8fb593" />}
+        />
         <Route path="/transferlist" element={<TransferList />} />
       </Routes>
       <Outlet />
