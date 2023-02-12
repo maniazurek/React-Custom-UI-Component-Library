@@ -9,7 +9,6 @@ import SwiperUI from "./SwiperUI";
 const Swiper = ({
   mainPhotoPosition,
   itemsColumns,
-  itemsRows,
   mainColor,
   templateSize,
 }) => {
@@ -30,7 +29,6 @@ const Swiper = ({
       <SwiperUI
         mainPhotoPosition={mainPhotoPosition}
         itemsColumns={itemsColumns}
-        itemsRows={itemsRows}
         mainColor={mainColor}
         templateSize={templateSize}
       />

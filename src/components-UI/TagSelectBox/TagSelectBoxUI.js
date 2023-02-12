@@ -14,7 +14,7 @@ const TagSelectBoxUI = () => {
     useState(tagsSuggestionsData);
   const [tags, setTags] = useState([]);
 
-  const inputRef = useRef < HTMLInputElement > null;
+  const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current?.scrollIntoView({ inline: "end" });

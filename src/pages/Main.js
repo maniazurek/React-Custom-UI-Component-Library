@@ -70,17 +70,17 @@ const Main = () => {
           path="/swiper"
           element={
             <Swiper
-              mainPhotoPosition="right"
-              // mainPhotoPosition="left"
+              // mainPhotoPosition="right"
+              mainPhotoPosition="left"
               // mainPhotoPosition="top"
               // mainPhotoPosition="bottom"
               // templateSize="small"
-              templateSize="medium"
-              // templateSize="large"
+              // templateSize="medium"
+              templateSize="large"
               // itemsColumns="1"
               // itemsColumns="2"
-              itemsColumns="3"
-              // itemsColumns="4"
+              // itemsColumns="3"
+              itemsColumns="4"
               mainColor="#8fb593"
             />
           }

@@ -62,11 +62,186 @@ export const SwiperItems = styled.div`
     itemsColumns === "2" && "1fr 1fr"};
   grid-template-columns: ${({ itemsColumns }) =>
     itemsColumns === "3" && "1fr 1fr 1fr"};
+
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "top" && itemsColumns === "1" && "1fr 1fr 1fr 1fr"};
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "bottom" &&
+    itemsColumns === "1" &&
+    "1fr 1fr 1fr 1fr"};
+
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "top" && itemsColumns === "2" && "1fr 1fr 1fr 1fr"};
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "bottom" &&
+    itemsColumns === "2" &&
+    "1fr 1fr 1fr 1fr"};
+
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "top" && itemsColumns === "3" && "1fr 1fr 1fr 1fr"};
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "bottom" &&
+    itemsColumns === "3" &&
+    "1fr 1fr 1fr 1fr"};
+
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "top" && itemsColumns === "4" && "1fr 1fr 1fr 1fr"};
+  grid-template-columns: ${({ itemsColumns, mainPhotoPosition }) =>
+    mainPhotoPosition === "bottom" &&
+    itemsColumns === "4" &&
+    "1fr 1fr 1fr 1fr"};
+
   align-items: center;
   gap: 6px;
+
   height: ${({ templateSize }) => templateSize === "large" && "404px"};
   height: ${({ templateSize }) => templateSize === "medium" && "280px"};
   height: ${({ templateSize }) => templateSize === "small" && "160px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "large" &&
+    itemsColumns === "1" &&
+    "128px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "large" &&
+    itemsColumns === "1" &&
+    "128px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "medium" &&
+    itemsColumns === "1" &&
+    "92px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "medium" &&
+    itemsColumns === "1" &&
+    "92px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "small" &&
+    itemsColumns === "1" &&
+    "52.8px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "small" &&
+    itemsColumns === "1" &&
+    "52.8px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "large" &&
+    itemsColumns === "2" &&
+    "256px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "large" &&
+    itemsColumns === "2" &&
+    "256px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "medium" &&
+    itemsColumns === "2" &&
+    "184px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "medium" &&
+    itemsColumns === "2" &&
+    "184px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "small" &&
+    itemsColumns === "2" &&
+    "105px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "small" &&
+    itemsColumns === "2" &&
+    "105px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "large" &&
+    itemsColumns === "3" &&
+    "360px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "large" &&
+    itemsColumns === "3" &&
+    "360px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "medium" &&
+    itemsColumns === "3" &&
+    "278px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "medium" &&
+    itemsColumns === "3" &&
+    "278px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "small" &&
+    itemsColumns === "3" &&
+    "175px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "small" &&
+    itemsColumns === "3" &&
+    "175px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "large" &&
+    itemsColumns === "4" &&
+    "495px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "large" &&
+    itemsColumns === "4" &&
+    "495px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "medium" &&
+    itemsColumns === "4" &&
+    "362px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "medium" &&
+    itemsColumns === "4" &&
+    "362px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "top" &&
+    templateSize === "small" &&
+    itemsColumns === "4" &&
+    "230px"};
+
+  height: ${({ templateSize, mainPhotoPosition, itemsColumns }) =>
+    mainPhotoPosition === "bottom" &&
+    templateSize === "small" &&
+    itemsColumns === "4" &&
+    "230px"};
+
   overflow: scroll;
 `;
 
