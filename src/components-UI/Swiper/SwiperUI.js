@@ -20,6 +20,14 @@ const SwiperUI = ({
 }) => {
   const [swiperShowed, setSwiperShowed] = useState(0);
 
+  const swiperRefs = swiperData.map((data) => {
+    return useRef(null);
+  });
+
+  useEffect(() => {
+    swiperRefs[swiperShowed].current.scrollIntoView({ block: "end" });
+  }, [swiperShowed]);
+
   const onSwiperChangeRight = () => {
     if (swiperShowed >= swiperData.length - 1) {
       setSwiperShowed(0);
@@ -98,6 +106,7 @@ const SwiperUI = ({
       >
         {swiperData.map((item, index) => (
           <SwiperItem
+            ref={swiperRefs[index]}
             key={item.id}
             image={item.imageURL}
             selected={swiperShowed === index && "selected"}
