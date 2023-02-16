@@ -5,8 +5,15 @@ import {
   SectionTitle,
 } from "../../components-website/ComponentsWebStyles";
 import AccordionUI from "./AccordionUI";
+import Form from "../../components-website/Form";
 
-const Accordion = ({ show, showContent, mainColor, disabledColor, contentColor }) => {
+const Accordion = ({
+  show,
+  showContent,
+  mainColor,
+  disabledColor,
+  contentColor,
+}) => {
   return (
     <SectionContainer>
       <SectionTitle>Accordion</SectionTitle>
@@ -28,6 +35,7 @@ const Accordion = ({ show, showContent, mainColor, disabledColor, contentColor }
         disabledColor={disabledColor}
         contentColor={contentColor}
       />
+      <Form />
     </SectionContainer>
   );
 };
