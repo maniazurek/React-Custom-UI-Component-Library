@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const SideNavigation = styled.nav`
   width: 192px;
@@ -21,12 +22,6 @@ export const NavigationItem = styled.h3`
   font-size: 15px;
   margin: 0px;
   padding: 10px;
-  &:hover,
-  &:focus {
-    border-radius: 10px;
-    color: #8fb593;
-    background-color: #fff;
-  }
 `;
 
 export const SectionContainer = styled.div`
@@ -44,4 +39,14 @@ export const SectionTitle = styled.p`
   font-size: 40px;
   margin-top: 0px;
   margin-bottom: 33.2px;
+`;
+
+export const NavLinkElement = styled(NavLink)`
+  &:hover h3,
+  &:focus h3,
+  &.active h3 {
+    border-radius: 10px;
+    color: #8fb593;
+    background-color: #fff;
+  }
 `;

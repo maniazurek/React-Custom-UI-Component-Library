@@ -1,37 +1,36 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { NavigationItem } from "./ComponentsWebStyles";
+import { NavLinkElement, NavigationItem } from "./ComponentsWebStyles";
 
 const NavigationItems = () => {
   return (
     <>
-      <NavLink to="/accordion">
+      <NavLinkElement to="/accordion">
         <NavigationItem>Accordion</NavigationItem>
-      </NavLink>
-      <NavLink to="/button">
+      </NavLinkElement>
+      <NavLinkElement to="/button">
         <NavigationItem>Button</NavigationItem>
-      </NavLink>
-      <NavLink to="/checkbox">
+      </NavLinkElement>
+      <NavLinkElement to="/checkbox">
         <NavigationItem>Checkbox</NavigationItem>
-      </NavLink>
-      <NavLink to="/rating">
+      </NavLinkElement>
+      <NavLinkElement to="/rating">
         <NavigationItem>Rating</NavigationItem>
-      </NavLink>
-      <NavLink to="/selectbox">
+      </NavLinkElement>
+      <NavLinkElement to="/selectbox">
         <NavigationItem>Select Box</NavigationItem>
-      </NavLink>
-      <NavLink to="/swiper">
+      </NavLinkElement>
+      <NavLinkElement to="/swiper">
         <NavigationItem>Swiper</NavigationItem>
-      </NavLink>
-      <NavLink to="/switchbutton">
+      </NavLinkElement>
+      <NavLinkElement to="/switchbutton">
         <NavigationItem>Switch Button</NavigationItem>
-      </NavLink>
-      <NavLink to="/tagselectbox">
+      </NavLinkElement>
+      <NavLinkElement to="/tagselectbox">
         <NavigationItem>Tag Select Box</NavigationItem>
-      </NavLink>
-      <NavLink to="/transferlist">
+      </NavLinkElement>
+      <NavLinkElement to="/transferlist">
         <NavigationItem>Transfer List</NavigationItem>
-      </NavLink>
+      </NavLinkElement>
     </>
   );
 };

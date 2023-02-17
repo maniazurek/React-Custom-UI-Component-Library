@@ -120,8 +120,3 @@ const AccordionUI = ({
 };
 
 export default AccordionUI;
-
-// scroll na wysokość opisu
-
-// zmiene trzymane w stringach
-// tryb horyzontalny
