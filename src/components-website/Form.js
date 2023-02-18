@@ -40,27 +40,28 @@ const FormAdd = styled.div`
   cursor: pointer;
 `;
 
-const FormContainer = styled.div`
-  border: 1px solid #000;
-  background-color: #fff;
-  width: 300px;
-  height: 300px;
-`;
+// const FormContainer = styled.div`
+//   border: 1px solid #000;
+//   background-color: #fff;
+//   width: 300px;
+//   height: 300px;
+// `;
 
-const FormTaskOverlay = styled.div`
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.35);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+// const FormTaskOverlay = styled.div`
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   position: absolute;
+//   background: rgba(0, 0, 0, 0.35);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 2;
+// `;
 
-const CloseForm = styled.div`
-  cursor: pointer;
-`;
+// const CloseForm = styled.div`
+//   cursor: pointer;
+// `;
 
 export default Form;
