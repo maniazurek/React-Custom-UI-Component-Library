@@ -5,7 +5,6 @@ import {
   SectionTitle,
 } from "../../components-website/ComponentsWebStyles";
 import AccordionUI from "./AccordionUI";
-import Form from "../../components-website/Form";
 
 const Accordion = ({
   show,
@@ -35,7 +34,6 @@ const Accordion = ({
         disabledColor={disabledColor}
         contentColor={contentColor}
       />
-      <Form />
     </SectionContainer>
   );
 };
