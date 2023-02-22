@@ -17,11 +17,17 @@ export const NavigationHeader = styled.h1`
   cursor: pointer;
 `;
 
+export const NavigationItemsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
+
 export const NavigationItem = styled.h3`
   color: #fff;
   font-size: 15px;
   margin: 0px;
-  padding: 10px;
+  padding: 7px;
 `;
 
 export const SectionContainer = styled.div`

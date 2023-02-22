@@ -1,9 +1,14 @@
 import React from "react";
-import { NavLinkElement, NavigationItem } from "./ComponentsWebStyles";
+import {
+  NavLinkElement,
+  NavigationItem,
+  NavigationItemsContainer,
+} from "./ComponentsWebStyles";
+import styled from "styled-components";
 
 const NavigationItems = () => {
   return (
-    <>
+    <NavigationItemsContainer>
       <NavLinkElement to="/accordion">
         <NavigationItem>Accordion</NavigationItem>
       </NavLinkElement>
@@ -31,7 +36,7 @@ const NavigationItems = () => {
       <NavLinkElement to="/transferlist">
         <NavigationItem>Transfer List</NavigationItem>
       </NavLinkElement>
-    </>
+    </NavigationItemsContainer>
   );
 };
 
